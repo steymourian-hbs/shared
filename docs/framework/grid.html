@@ -1,0 +1,227 @@
+
+<!-- ================================================
+
+
+Grids
+
+
+================================================ -->
+
+
+<div class="yellowgreen-bg">
+<div class="container" id="grid">
+<h1 class="alpha-uc white">Grid <span class="delta"><a class="black section" name="grid">.grid-framework</a></span></h1>
+</div>
+</div>
+
+<div class="container">
+    <div class="debug-spans">
+<br/>
+
+<p>The HBS.edu grid is a fixed 12-module, variable column system.</p>
+
+    <div class="row">
+      <div class="span1">
+         .span1
+      </div>
+      <div class="span11">
+         .span11
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="span2">
+         .span2
+      </div>
+      <div class="span10">
+         .span10
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="span3">
+         .span3
+      </div>
+      <div class="span9">
+         .span9
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="span4">
+         .span4
+      </div>
+      <div class="span8">
+         .span8
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="span5">
+         .span5
+      </div>
+      <div class="span7">
+         .span7
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="span6">
+         .span6
+      </div>
+      <div class="span6">
+         .span6
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="span12">
+         .span12
+      </div>
+    </div>
+
+    </div>
+<br/>
+
+    <div class="row">
+    <div class="span4">
+    Each row is designated with a <code>.row</code> class.  Use <code>.row-fluid</code> when you need a grid to fit a compressed container.
+    </div>
+    <div class="span4">
+
+    <pre class="prettyprint">
+&lt;div class="row"&gt;
+  &lt;div class="span4"&gt;...&lt;/div&gt;
+  &lt;div class="span8"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+    </pre>
+<br/>
+
+    </div>
+    </div>
+
+
+    <div class="row">
+    <div class="span4">
+    Use the <code>.container</code> class to set the 984px page width.
+    </div>
+    <div class="span4">
+
+    <pre class="prettyprint">
+&lt;div class="container"&gt;
+   ... page body goes here ...
+&lt;/div&gt;
+    </pre>
+<br/>
+
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="container">
+
+<p>Use the <code>.vrule</code> class to set a vertical line on the front edge of each column.</p>
+<p><b>Note:</b> you cannot put these on a <code>.row</code> due to the negative margin</p>
+
+</div>
+
+
+
+<div class="container vrule1">.vrule1</div>
+<div class="container vrule2">.vrule2</div>
+<div class="container vrule3">.vrule3</div>
+<div class="container vrule4">.vrule4</div>
+<div class="container vrule5">.vrule5</div>
+<div class="container vrule6">.vrule6</div>
+<div class="container vrule7">.vrule7</div>
+<div class="container vrule8">.vrule8</div>
+<div class="container vrule9">.vrule9</div>
+<div class="container vrule10">.vrule10</div>
+<div class="container vrule11">.vrule11</div>
+
+<br/>
+<div class="container">
+<p>Use the <code>.vruleh</code> ('h' for half) class to set a vertical line between columns.</p>
+</div>
+
+<div class="container vrule1h">.vrule1h</div>
+<div class="container vrule2h">.vrule2h</div>
+<div class="container vrule3h">.vrule3h</div>
+<div class="container vrule4h">.vrule4h</div>
+<div class="container vrule5h">.vrule5h</div>
+<div class="container vrule6h">.vrule6h</div>
+<div class="container vrule7h">.vrule7h</div>
+<div class="container vrule8h">.vrule8h</div>
+<div class="container vrule9h">.vrule9h</div>
+<div class="container vrule10h">.vrule10h</div>
+<div class="container vrule11h">.vrule11h</div>
+
+<br/>
+<div class="container">
+<p>Use the <code>.vrule-gutter</code> to offset a vertical line 32px from the start of the columns (place it on the .span3 sidebar).</p>
+</div>
+<br/>
+<!--
+<div class="container">
+<p>Use the <code>.vrulee</code> ('e' for end) class to set a vertical line at the end of the column.</p>
+</div>
+
+<div class="container vrule1e">.vrule1e</div>
+<div class="container vrule2e">.vrule2e</div>
+<div class="container vrule3e">.vrule3e</div>
+<div class="container vrule4e">.vrule4e</div>
+<div class="container vrule5e">.vrule5e</div>
+<div class="container vrule6e">.vrule6e</div>
+<div class="container vrule7e">.vrule7e</div>
+<div class="container vrule8e">.vrule8e</div>
+<div class="container vrule9e">.vrule9e</div>
+<div class="container vrule10e">.vrule10e</div>
+<div class="container vrule11e">.vrule11e</div>
+
+<br/>-->
+
+
+<div class="container">
+
+<p>The <code>.shim</code> classes to add vertical spacing between items.  Only use in one-off situations.  Use a custom class if you need to control spacing on more than one page.</p>
+
+.shim1
+<div class="black-bg shim1"></div>
+.shim4
+<div class="black-bg shim4"></div>
+.shim9
+<div class="black-bg shim9"></div>
+<br/>
+</div>
+
+
+<div class="container">
+
+<p>The <code>.cap</code> and <code>.base</code> classes add padding at the top and bottom of columns.</p>
+<div class="row">
+<div class="span8">
+<div style="border: 1px solid #ccc;padding: 10px;">
+<div class="black-bg cap"></div>
+.cap (40px)
+<div class="hr"></div>
+<p class="gamma">Body Column</p>
+<p style="border-bottom: 1px solid #ccc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<div class="black-bg base"></div>
+.base (96px)
+</div>
+<br/>
+</div>
+<div class="span4">
+<img src="images/columns.png"/>
+</div>
+</div>
+
+</div> <!-- .container -->

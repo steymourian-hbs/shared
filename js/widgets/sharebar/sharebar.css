@@ -1,0 +1,121 @@
+.w-sharebar {
+   border-top: 1px dotted #ccc;
+   border-bottom: 1px dotted #ccc;
+   margin-top: 1px;
+   margin-bottom: 1px; 
+   font-size: 11px;
+   height: 25px;
+   padding-top: 5px;
+}
+.w-sharebar.noborders{
+    border: none;
+	padding-top: 0px;
+	height: auto;
+}
+
+.w-sharebar  ul {
+	margin: 0px;
+	padding: 0px;
+	xfloat: left;
+	line-height: 1.4em;
+	list-style-type: none;
+}
+.w-sharebar ul li{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	float: left;
+	white-space: nowrap;
+	height: 25px;
+}
+
+.w-sharebar ul li.w-sharebar-email , .w-sharebar ul li.w-sharebar-share, .w-sharebar ul li.w-sharebar-comments, .w-sharebar ul li.w-sharebar-print {
+	padding-top: 3px;				
+
+}
+.w-sharebar ul li.w-sharebar-share{
+	padding-left: 10px;	
+	border-right: none;
+}
+.w-sharebar  ul li.w-sharebar-facebook{
+   padding-top: 0px;
+   float: right;   
+}
+.w-sharebar  ul li.w-sharebar-facebook .fbrecommends{
+	position: inherit; 
+}
+
+.w-sharebar-email > a {
+   background: url(http://www.hbs.edu/news/images/site/icon-email.gif) no-repeat scroll left center transparent;
+   padding: 0 11px 0 15px;
+   border-right: 1px solid silver;
+}
+.w-sharebar-share > div {
+   border-right: none;
+   background: url(http://www.hbs.edu/images/site/icon-share.gif) no-repeat scroll left center transparent;
+   padding: 0 12px 0 15px;
+}
+
+.w-sharebar-print > a{
+   background: url(http://www.hbs.edu/news/images/site/icon-print.gif) no-repeat 12px center;
+   padding: 0 12px 0 30px;
+   border-right: 1px solid silver;
+}
+
+.w-sharebar-comments > a{
+   background: url(http://www.hbs.edu/images/site/icon.comments.gif) no-repeat 12px 2px;
+   padding: 0px 10px 0px 30px;
+   border-right: 1px solid silver;
+}
+
+
+
+/* sharethis */
+
+.w-sharethis-container {
+   position: relative;
+}
+.w-sharethis-container ul.menu  {
+   background: #fff; /* for IE */
+   background: rgba(265,265,265,.9);
+   list-style-type: none;
+   padding: 6px 10px;
+   display: none;
+   border: 1px solid #666;
+   position: absolute;
+   left: -18px; 
+   top: 20px;
+   margin: 0;
+   font-weight: normal;
+   text-transform: none;
+   z-index: 1000;
+}
+
+
+.w-sharethis-container ul.menu li {
+   padding: 0 0;
+   margin: 4px 2px;
+   list-style-type: none;
+   white-space: nowrap;
+   float: none;
+}
+.w-sharethis-container ul.menu li a {
+   padding:0 0 5px 0;	
+   display: block;
+}
+
+.w-sharethis-container ul.menu li a span {
+   margin-right: 7px;
+   position: relative;
+   top: 3px;
+}
+
+.w-sharethis-container .facebook {
+   background: url(http://www.hbs.edu/shared/images/framework/1.0/icon.facebook.gif) no-repeat;
+}
+.w-sharethis-container .linkedin {
+   background: url(http://www.hbs.edu/shared/images/framework/1.0/icon.linkedin.gif) no-repeat;
+}
+.w-sharethis-container .twitter {
+   background: url(http://www.hbs.edu/shared/images/framework/1.0/icon.twitter.gif) no-repeat;
+}

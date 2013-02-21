@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<title>Widgets JS</title>
+<script type="text/javascript" src="http://code.jquery.com/qunit/qunit-1.10.0.js"></script>
+<link rel="stylesheet" type="text/css" href="http://code.jquery.com/qunit/qunit-1.10.0.css"/>
+
+<!--#include file="ssi/head.html"-->
+
+<style type="text/css">
+h1,.hr4 {margin: 16px 0;}
+h5{ margin-bottom: 8px;}
+#widgets-nav {color: white;}
+</style>
+<script>
+window.scrollTo = function(){} // qunit scrolls to the top
+</script>
+<body>
+<!--#include virtual="/shared/ssi/universal.header.html"-->
+<div class="type-framework color-framework grid-framework component-framework pattern-framework">
+<!--#include file="ssi/header.html"-->
+<div class="teal-bg">
+<div class="container site-header">
+<div class="delta white">Widgets</div>
+<p class="theta">Framework independent javascript widgets.</p>
+</div>
+</div>
+
+
+<div class="container h1-gamma h5-kappa">
+<br/>
+<p>Supports jQuery
+<a href="?jquery-version=1.8.1">v1.8.1</a>
+<a href="?jquery-version=1.7.1 ">v1.7.1</a>
+<a href="?jquery-version=1.2.3">v1.2.3</a>
+</p>
+
+<p>
+This library is for widgets that appear on non-framework sites such as mobile or legacy sites.  Include this javascript file after the jquery import.</p>
+<textarea class="prettyprint">
+<script type="text/javascript" src="http://www.hbs.edu/js/widgets.js"></script>
+</textarea>
+
+<div id="table-of-contents"></div>
+<div class="hr4"></div>
+
+
+<h1><a class="section black" name="Lightbox">Lightbox</a></h1>
+<div class="row">
+<div class="span8">
+<textarea class="prettyprint">
+$("#clickme").click(function(){
+   Widgets.Lightbox.displayHTML("<h1>Hello World</h1>");
+   return false;
+});
+</textarea>
+</div>
+<div class="span4">
+<p><a href="#" id="clickme">Click me</a></a>
+<script type="text/javascript">
+jQuery(function($){
+   $("#clickme").click(function(){
+     Widgets.Lightbox.displayHTML($("#popuphtml").html());
+     return false;
+   });
+})
+</script>
+    <div id="popuphtml" style="display:none">
+    <div class="color-framework type-framework grid-framework">
+    <div class="white-bg">
+    <div class="shim1"></div>
+    <div class="alpha">Hello World</div>
+    <p>This is a paragraph</p>
+    </div>
+    </div>
+    </div>
+
+</div>
+</div>
+
+   <div class="hr4"></div>
+
+<h1><a class="section black" name="InlineVideos">Inline Videos</a></h1>
+
+<textarea class="prettyprint">
+<a href="http://www.hbs.edu/videos/welcome-to-the-harvard-innovation-lab.html" class="widget-video-inline">Video Inline</a>
+</textarea>
+<a href="http://www.hbs.edu/videos/welcome-to-the-harvard-innovation-lab.html" class="widget-video-inline">Video Inline</a>
+<div class="hr4"></div>
+
+<h1><a class="section black" name="PopupVideos">Popup Videos</a></h1>
+<textarea class="prettyprint">
+<a href="http://www.hbs.edu/videos/test-msb.html" class="widget-video-popup">Video Popup</a>
+</textarea>
+<a href="http://www.hbs.edu/videos/test-msb.html" class="widget-video-popup">Video Popup 1</a><br />
+<a href="http://www.hbs.edu/videos/welcome-to-the-harvard-innovation-lab.html" class="widget-video-popup">Video Popup 2</a></br>
+<a href="http://www.hbs.edu/videos/nitin-nohria-conversation.html" class="widget-video-popup">Video Popup 3</a><br/>
+
+
+
+<div class="hr4"></div>
+<h1><a class="section black" name="InlineVideos">YouTube Popup Videos</a></h1>
+<textarea class="prettyprint">
+<a href="http://youtu.be/PgHe8MHIN4c" class="widget-video-popup">Youtube Video Popup 1</a>
+<a href="https://www.youtube.com/watch?v=9Y6022aNtnQ" class="widget-video-popup">Youtube Video Popup 2</a>
+<a href="http://www.youtube.com/watch?v=gZxQE71iTwU&list=UUWo4IA01TXzBeGJJKWHOG9g" class="widget-video-popup">Youtube Video Popup 3</a>
+</textarea>
+<a href="http://youtu.be/PgHe8MHIN4c" class="widget-video-popup">YouTube Popup 1</a><br/>
+<a href="https://www.youtube.com/watch?v=9Y6022aNtnQ" class="widget-video-popup">YouTube Popup 2</a><br/>
+<a href="http://www.youtube.com/watch?v=gZxQE71iTwU&list=UUWo4IA01TXzBeGJJKWHOG9g" class="widget-video-popup">YouTube Popup 3</a><br/>
+
+
+<div class="hr4"></div>
+<h1><a class="section black" name="InlineVideos">Vimeo Popup Videos</a></h1>
+<textarea class="prettyprint">
+<a href="http://vimeo.com/15611370" class="widget-video-popup">Vimeo Video Popup 1</a>
+</textarea>
+<a href="http://vimeo.com/15611370" class="widget-video-popup">Vimeo Popup 1</a><br/>
+
+
+
+<div class="hr4"></div>
+<h1><a class="section black" name="EmbeddedVideos">Embedded Videos</a></h1>
+<div class="row">
+<div class="span4">
+<textarea class="prettyprint">
+<a class="widget-video-embed"
+href="http://www.hbs.edu/videos/welcome
+-to-the-harvard-innovation-lab.html"
+>Video Embed</a>
+</textarea>
+</div>
+<div class="span8">
+<a href="http://www.hbs.edu/videos/welcome-to-the-harvard-innovation-lab.html" class="widget-video-embed">Video Embed</a>
+</div>
+</div>
+<div class="hr4"></div>
+
+
+<h1><a class="section black" name="Share">Share</a></h1>
+<textarea class="prettyprint">
+<span class="widget-sharethis" data-style="framework">Share This</span>
+
+<span class="widget-sharethis">Share This</span>
+</textarea>
+
+<p><span class="widget-sharethis" data-style="framework">Share This</span></p>
+<p><span class="widget-sharethis">Share This</span></p>
+
+<br/>
+<textarea class="prettyprint">
+
+<div class="widget-sharebar" data-style="framework">ShareBar</div>
+
+<div class="widget-sharebar light" data-style="framework">ShareBar</div>
+
+<div class="widget-sharebar">ShareBar</div>
+</textarea>
+
+
+<p><img src="images/overlays/sharebar.png" class="draggable toggle" /></p>
+
+<div class="widget-sharebar" data-style="framework">ShareBar</div>
+<br>
+<div class="black-bg" style="padding: 10px">
+<div class="widget-sharebar light" data-style="framework">ShareBar</div>
+</div>
+<br/>
+<div class="widget-sharebar">ShareBar</div>
+
+<div class="hr4"></div>
+
+
+<h1><a class="section black" name="TwitterFollow">Twitter Follow</a></h1>
+<textarea class="prettyprint">
+<a href="http://twitter.com/HarvardHBS" class="widget-twitter-follow">Follow</a>
+</textarea>
+<a href="http://twitter.com/HarvardHBS" class="widget-twitter-follow">Follow</a>
+
+   <div class="hr4"></div>
+<h1><a class="section black" name="TwitterStream">Twitter Stream</a></h1>
+<div class="row xdebug-lines">
+<div class="span6">
+<textarea class="prettyprint">
+<div class="twitter-stream">
+  <div class="widget-twitter-stream"
+  data-profile="hbsrecruitmba"
+  data-style="framework"
+  data-limit="3"
+  data-more="3"
+  ></div>
+</div>
+</textarea>
+<br/>
+<div class="twitter-stream">
+  <div class="widget-twitter-stream"
+  data-profile="hbsrecruitmba"
+  data-avatars="false"
+  data-style="framework"
+  data-more="3"
+  data-limit="3"></div>
+</div>
+</div>
+<div class="span6">
+<textarea class="prettyprint">
+  <div class="widget-twitter-stream"
+  data-search="HBSAlumni OR HBSNews OR HBSAlumniClubs"
+  data-limit="4"></div>
+</textarea>
+<br/>
+<div class="widget-twitter-stream" data-search="HBSAlumni OR HBSNews OR HBSAlumniClubs" data-limit="4"></div>
+</div>
+</div>
+
+   <div class="hr4"></div>
+
+
+
+   <!--
+
+   Widgets/Videos/ShareBar
+-->
+
+   <div id="qunit"></div>
+
+</div>
+
+</div>
+<br/><br/>
+<br/><br/>
+<!--#include virtual="/shared/ssi/universal.footer.html"-->
+</body>
+</html>

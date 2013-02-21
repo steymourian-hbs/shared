@@ -1,0 +1,36 @@
+<h1><a class="black section" name="timeago">timeago</a></h1>
+<p>The timeago module creates relative timestamps</p>
+
+<div class="row">
+<div class="span6">
+<h5>html markup</h5>
+<textarea class="prettyprint">
+<span class="timeago" data-timestamp="2012-12-01T09:24:17 UTC">
+ 01 DEC 2102
+</span>
+</textarea>
+</div>
+<div class="span6 js-framework">
+<h5>results</h5>
+<p><span class="timeago" data-timestamp="2012-12-06T18:00:00 UTC">06 DEC 2102</span></p>
+
+</div>
+</div>
+
+<!--
+
+TEST CASES
+
+-->
+<script type="text/javascript">
+require(['framework/timeago'],function(obfuscate){
+
+   test("timeago", function() {
+     ok($(".timeago").html() != '01 DEC 2102','datetime');
+   });
+
+});
+</script>
+
+
+

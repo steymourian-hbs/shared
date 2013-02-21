@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Web Services</title>
+    <!--#include file="ssi/head.html"-->
+    <style type="text/css">
+     h1,.hr4, h2, h3 {margin: 1em 0;}
+    </style>
+</head>
+
+<body>
+
+<!--#include virtual="/shared/ssi/universal.header.html"-->
+
+<div class="type-framework color-framework grid-framework component-framework pattern-framework js-framework">
+<div class="h2-gamma-uc h3-epsilon-uc">
+
+<!--#include virtual="ssi/header.html"-->
+<div class="teal-bg">
+<div class="container site-header">
+<div class="delta white">WCM Web Services</div>
+<p class="theta">Remote APIs to fetch data.</p>
+</div>
+</div>
+
+<div class="container">
+<br/>
+
+<div id="table-of-contents"></div>
+<div class="hr4"></div>
+
+
+
+
+<h2><a class="section black" name="Blogs">Blogs</a></h2>
+<div class="row">
+<div class="span8">
+<p>fetch latest faculty blog entries</p>
+<pre class="prettyprint lang-html">
+http://www.hbs.edu/faculty/faculty-blogs-rss.aspx
+</pre>
+</div>
+</div>
+
+<h2><a class="section black" name="Blogs">Other RSS Feeds</a></h2>
+<div class="row">
+<div class="span8">
+<p>List of misc rss feeds on the hbs websites</p>
+<pre class="prettyprint lang-html">
+// mba admissions blog
+http://www.hbs.edu/mba/blogrss.aspx
+
+// hbswk
+http://hbswk.hbs.edu/rss/rss.xml
+http://www.exed.hbs.edu/rss.aspx
+http://www.alumni.hbs.edu/bulletin/rss/rss.xml  
+http://www.alumni.hbs.edu/alumni_rss.xml
+// others...    
+</pre>
+</div>
+</div>
+
+
+
+
+<h2><a class="section black" name="Twitter">Twitter</a></h2>
+<div class="row">
+<div class="span8">
+<p>Latest</p>
+<pre class="prettyprint lang-html">
+http://authdev.hbs.edu/twitter-rss.aspx
+
+parameters
+  type - Type of twitter feeds (HBS or Faculty)
+</pre>
+</div>
+</div>
+
+
+<h2><a class="section black" name="News">Newsroom Feed</a></h2>
+<div class="row">
+<div class="span8">
+<pre class="prettyprint lang-html">
+http://www.hbs.edu/news/rss.aspx
+
+parameters
+  limit - Number of results to return (Default: 10)
+  id - Item ID to return
+</pre>
+</div>
+</div>
+
+
+<h2><a class="section black" name="Pubs">Faculty Publications</a></h2>
+<div class="row">
+<div class="span8">
+<pre class="prettyprint lang-html">
+
+http://www.hbs.edu/faculty/faculty-publications-rss.aspx
+
+parameters:
+  type - 
+  limit - 
+  searchquery - 
+
+examples:
+  http://www.hbs.edu/faculty/faculty-publications-rss.aspx?type=Cases&limit=10
+  http://www.hbs.edu/faculty/faculty-publications-rss.aspx?searchquery=
+     and(alltopics:equals(%22Finance%22),hbsproducttype:equals(%22RISItem%22))&limit=10
+
+
+</pre>
+</div>
+</div>
+
+
+
+<h2><a class="section black" name="Faculty Info">Faculty Info</a></h2>
+<div class="row">
+<div class="span8">
+<pre class="prettyprint lang-html">
+
+http://www.hbs.edu/faculty/faculty-info-rss.aspx
+
+
+parameters
+  names - Semicolon separated list of Full Names, 
+          Full Names without Middle Initial, or Username
+  
+examples:
+  http://www.hbs.edu/faculty/faculty-info-rss.aspx?names=michael+porter;lpaine;jalvarez;
+
+</pre>
+</div>
+</div>
+
+
+<h2><a class="section black" name="AtomExample">Atom Feed Example</a></h2>
+
+<p>Validate feed using the <a href="http://validator.w3.org/appc/#validate_by_input">Feed Validator</a></p>
+<textarea class="prettyprint">
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>Example Feed</title>
+    <link href="http://hbswk.hbs.edu/rss/rss.xml" rel="self" />
+    <updated>2003-12-13T18:30:02Z</updated>
+    <id>http://hbswk.hbs.edu/rss/rss.xml</id>
+
+    <entry>
+        <title>Atom-Powered Robots Run Amok</title>
+        <link href="http://example.org/2003/12/13/atom03" />
+        <id>http://example.org/2003/12/13/atom03</id>
+        <updated>2003-12-13T18:30:02Z</updated>
+        <summary>Summary Text</summary>
+        <content>Full Text</content>
+        <author>
+              <name>John Doe</name>
+              <email>johndoe@example.com</email>
+        </author>
+    </entry>
+</feed>
+
+
+<entry>
+    <!--<xsl:copy-of select="."/>-->
+    <title><xsl:value-of select="Title" /></title>
+    <updated><xsl:value-of select="PubDate/@Sortable" />Z</updated>
+    <published><xsl:value-of select="PubDate/@Sortable" />Z</published>
+    <author><name><xsl:value-of select="normalize-space($author)" /></name></author>
+    <content><xsl:value-of select="normalize-space($contents)" /></content>
+    <link><xsl:attribute name="href"><xsl:value-of select="normalize-space($link)" /></xsl:attribute></link>
+    <hbssource xmlns="http://www.hbs.edu/"><xsl:value-of select="normalize-space($source)" /></hbssource>
+    <hbssourcedisplayname xmlns="http://www.hbs.edu/"><xsl:value-of select="normalize-space($sourcedisplayname)" /></hbssourcedisplayname>
+    <thumbnail xmlns="http://www.hbs.edu/"><xsl:value-of select="normalize-space($image)"/></thumbnail>
+    <hbsdate xmlns="http://www.hbs.edu/"><xsl:value-of select="normalize-space($hbsdate)"/></hbsdate>
+</entry>
+
+
+
+</textarea>
+
+
+
+
+
+</div>
+
+</div>
+
+<br/><br/><br/><br/><br/>
+</div>
+</div>
+<!--#include virtual="/shared/ssi/universal.footer.html"-->
+</body>
+</html>

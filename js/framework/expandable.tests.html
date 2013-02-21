@@ -1,0 +1,65 @@
+<h1><a class="black section" name="expandable">expandable</a></h1>
+<p>open and close expandable components</p>
+
+<div class="row" id="expandable-test">
+<div class="span6">
+<h5>html markup</h5>
+<textarea class="prettyprint">
+<dl class="plusminus">
+   <dt><a>What is the timeline for applying?</a>
+       <br/><span class="mu">Subheader</span></dt>
+   <dd>View application deadlines</dd>
+   <dt><a>How will my application be evaluated?</a></dt>
+   <dd>Each application received is reviewed in...</dd>
+</dl>
+</textarea>
+</div>
+<div class="span6 orange-inherit">
+<h5>results</h5>
+<div class="js-framework">
+    <dl class="plusminus">
+       <dt><a>What is the timeline for applying?</a><br/><span class="mu">Subheader</span></dt>
+       <dd>View application deadlines</dd>
+       <dt><a>How will my application be evaluated?</a></dt>
+       <dd>Each application received is reviewed in depth by the Admissions Board. When selecting students we put an emphasis on leadership potential, strong academic ability, and personal qualities and characteristics.&nbsp; <a href="/mba/admissions">Find out more</a>.</dd>
+    </dl>
+</div>
+</div>
+</div>
+
+<!--
+
+TEST CASES
+
+Click on the first and second tab of the first .nav-tabs, 
+and confirm visibility of elements.
+
+-->
+<script type="text/javascript">
+require(['domready!'],function(){
+
+   test("expandable", function() {
+     var t = $("#expandable-test .plusminus").eq(0);
+     var first = $("dt",t).eq(0);
+     var firstdd = first.next();
+     var second = $("dt",t).eq(1);
+     var seconddd = second.next();
+     first.click();
+     ok(first.hasClass('open'),'first expandable is open');
+     ok(!second.hasClass('open'),'second expandable is not open');
+     ok(firstdd.is(':visible'),'first dd is visible');
+     ok(!seconddd.is(':visible'),'second dd is not visible');
+     second.click();
+     ok(first.hasClass('open'),'first expandable is open');
+     ok(second.hasClass('open'),'second expandable is open');
+     ok(firstdd.is(':visible'),'first dd is visible');
+     ok(seconddd.is(':visible'),'second dd is visible');
+     first.click();
+     second.click();
+   });
+     
+});
+</script>
+
+
+

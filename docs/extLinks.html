@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<title>External Link Conventions</title>
+
+<!--#include virtual="ssi/head.html"-->
+
+<style type="text/css">
+h1,.hr4 {margin: 16px 0;}
+h5{ margin-bottom: 8px;}
+#js-nav {color: white;}
+.highlight{text-decoration: underline; text-transform:uppercase;}
+h2{ margin-top: 24px;margin-bottom: 24px;}
+</style>
+
+<script type="text/javascript" src="js/core.js"></script>
+<script>
+$(document).ready(function(){
+
+   	var options = {noIcons:true};
+	$(".container .noIconsJS a").coreLinks(options);
+
+	$("#supernav a, #superfooter a, .container a").coreLinks();
+
+});
+</script>
+
+
+<body>
+<form>
+<!--#include virtual="/shared/ssi/universal.header.html"-->
+<div class="type-framework color-framework grid-framework component-framework pattern-framework">
+<!--#include virtual="ssi/header.html"-->
+
+<div class="teal-bg">
+<div class="container site-header">
+<div class="delta white">External Link Conventions</div>
+<p class="theta">This is a page that tests all possible link scenarios</p>
+</div>
+</div>
+
+
+<div class="container h1-gamma h5-kappa">
+<div class="container">
+		<div class="row">
+        	<div class="span12">
+				<h2>JS Code</h2>
+<textarea class="prettyprint">
+//apply external link conventions for links within this selector
+$(".container a").coreLinks();
+$("#supernav a, #superfooter a, .container a").coreLinks();
+</textarea>
+
+                <h2>Links that should open in the <span class="highlight">current</span> tab</h2>
+                <ol>
+                    <li><a href="http://www.hbs.edu/mba">Any hbs.edu sites</a></li>
+                    <li><a href="http://www.clubhub.hbs.org/">http://www.clubhub.hbs.org/</a></li>
+                    <li><a href="http://www.hbs.PlanYourlegacy.org/">http://www.hbs.planyourlegacy.org/</a></li>
+
+                </ol>
+
+
+                <h2>Links that should open in a <span class="highlight">NEW</span> tab</h2>
+                <ol>
+                    <li><a href="http://www.google.com">Any non hbs.edu site</a></li>
+                    <li><a href="http://www.harvard.edu">This includes Harvard.edu</a></li>
+                    <li><a href="http://www.hbr.org">..and hbr.org</a></li>
+                </ol>
+
+
+                <h2>PDF links always open in a <span class="highlight">NEW</span> tab.
+                On hover, show the black icon above the link, at your cursor point. <br/>If the link is an image, do not apply hover effect.
+                </h2>
+                <ol>
+                    <li><a href="http://www.hbs.edu/research/pdf/11-116.pdf">An internal PDF</a></li>
+                    <li><a href="http://www.panerabread.com/pdf/menu.pdf">An external PDF</a></li>
+                    <li><a href="http://www.hbs.edu/research/pdf/11-116.pdf"><img src="/shared/images/pdfIcon.jpg" border="0" width="50px" height="60px"/></a></li>
+                </ol>
+
+                <h2>Links that should <span class="highlight">automatically ignore</span> conventions</h2>
+                <ol>
+                    <li><a href="javascript:void(0);">href values that contain "javascript:"</a></li>
+                    <li><a href="#">href values that = "#"</a></li>
+                    <li>When in SharePoint edit mode</li>
+                </ol>
+
+        	</div>
+        </div>
+
+
+        <div class="row">
+            <div class="span12">
+                <h2>Options for overwriting the conventions</h2>
+<textarea class="prettyprint">
+//1. Show no icon, but still open in a new tab
+<a href="file.pdf" class="ext-no-icon">Sammple Link</a>
+
+//2. Show no icon, but still open in a new tab (via jQuery)
+var options = {noIcons:true};
+$(".container .noIconsJS a").coreLinks(options);
+
+//3. Ignore conventions entirely (for non-PDF links)
+<a href="http://www.google.com" class="noext">Sample Link</a>
+
+//4. Ignore conventions entirely (for PDF links)
+<a href="file.pdf" class="nopdf">Sample Link</a>
+</textarea>
+
+                 <br/><ol>
+                    <li><b>Show no icon, but still open in a new tab:</b> <a href="http://www.hbs.edu/research/pdf/11-116.pdf" class="ext-no-icon">Sample Link</a> </li>
+                    <li class="noIconsJS"><b>Show no icon, but still open in a new tab (jQuery way):</b> <a href="http://www.hbs.edu/research/pdf/11-116.pdf">Sample Link</a></li>          			<li><b>Ignore conventions entirely:</b> <a href="http://www.google.com" class="noext">Sample Link</a></li>
+                    <li><b>Ignore conventions entirely (PDF):</b> <a href="http://www.hbs.edu/research/pdf/11-116.pdf" class="nopdf">Sample Link</a></li>
+                </ol>
+
+        </div>
+
+</div>
+
+
+
+
+
+</div>
+
+</div>
+<br/><br/>
+<br/><br/>
+<!--#include virtual="/shared/ssi/universal.footer.html"-->
+</form>
+</body>
+</html>

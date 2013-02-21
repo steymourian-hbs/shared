@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Standard Page - Harvard Business School</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<!--#include file="/shared/js/widgets/samples/includes/head.html"-->
+
+</head>
+<body>
+
+    <!--#include file="/shared/js/widgets/samples/includes/header.html"-->
+
+    <div id="content"><div class="inner">
+
+
+<h2>Sharebar Samples</h2>
+
+
+<div class="sampleblock">
+	<h3>Sharebar gets embedded to the page</h3>
+    <br />
+<script type="text/javascript">
+// http://webdev.hbs.edu/shared/js/widgets.js
+
+//Widgets.settings('sharebar', {emailLabel:'eee',printLabel:'ppp',mailto:'hello',print:false,fbrecommend:false})
+
+Widgets.settings('sharebar', {mailto:'mailto:?subject=blah&body=test',emailLabel:'eee',printLabel:'ppp',fbrecommend:false})
+    
+Widgets.settings('sharethis',{label:"CHINA SHARE THIS",sites:['linkedin']})
+
+</script>
+  
+<div class="widget-sharebar">ShareBar</div>
+
+
+        </div></div></div><!-- content -->
+
+        <div id="sidebar"><div class="inner"></div></div>
+
+    </div><!-- #content-wrap -->
+
+<!--#include virtual="/shared/ssi/common.footer.html"-->
+
+</div><!-- #container -->
+
+
+<!-- END Standard Footer -->
+</body>
+</html>

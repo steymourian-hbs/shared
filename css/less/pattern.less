@@ -1,0 +1,284 @@
+.pattern-framework {
+
+
+//------------------
+// Site Header
+//------------------
+
+.site-header {
+
+   h1{
+      padding: 26px 0 17px 0;
+   }
+   
+   .hr,.divider {
+      background-color: white;
+      .opacity(.4);
+   }
+   
+   .toolbar {
+      float: right;
+      margin-top: -45px;
+      li {
+         margin-right: 0;
+         margin-left: 29px;
+         line-height: 40px;
+      }
+
+   }
+   
+   .navbar {
+     height: 42px;  // make sure it doesn't take anymore than 42px so it doesn't mess up the background images
+   }
+   
+   .breadcrumb {
+     margin: 32px 0 14px 0;
+   }
+  
+}
+
+//------------------
+// Page Header
+//------------------
+
+.page-header {
+      
+   .breadcrumb {
+      padding-top: 28px;
+      padding-bottom: 12px;
+   }
+   
+   .base {
+      margin-top: 30px; // starter base for page-header (40px on a .alpha header)
+   }
+   
+    .vrule(@num) {
+       background-repeat: no-repeat;
+       background-position: (60px * @num) + (24px * (@num - 1)) + (24px) 113px;
+    } 
+
+    .vrule1 {.vrule(1);}
+    .vrule2 {.vrule(2);}
+    .vrule3 {.vrule(3);}
+    .vrule4 {.vrule(4);}
+    .vrule5 {.vrule(5);}
+    .vrule6 {.vrule(6);}
+    .vrule7 {.vrule(7);}
+    .vrule8 {.vrule(8);}
+    .vrule9 {.vrule(9);}
+    .vrule10 {.vrule(10);}
+    .vrule11 {.vrule(11);}
+    
+
+}
+
+//------------------
+// Sidebar Margins
+//------------------
+
+.sidebar-margins {
+
+   //background-color: rgba(200,250,200,.1);
+
+
+   .hr {
+      margin-top: 26px;
+      margin-bottom: 26px;
+   }
+   
+   h3 {
+      margin-top: 22px;
+      margin-bottom: 22px;
+   }
+   
+   // media list header
+   h3 + .media-list3,
+   h3 + .media-list4 {
+      margin-top: -4px;
+   }
+}
+
+
+//------------------
+// Featured Video
+//------------------
+  .featured-video h4{
+       margin: 0 0 5px 0;
+       padding: 0;
+   }
+
+  .featured-video img{
+       border: 3px solid white;
+   } 
+  
+  .featured-video p.datestamp{
+       margin: 13px 0 8px 0;
+       .type-framework .mu;
+   }
+  
+
+//------------------
+// Tile
+//------------------ 
+
+.tile {
+  display: block;
+  .stroke0,
+  .stroke3 {
+     display: block;
+     position: relative;
+     img { display: block;}
+     .icon-play {
+        display: block;
+        position: absolute;
+        top: 8px;
+        left: 8px;
+     }
+  }
+  .o {
+     .transition(opacity 0.2s linear);
+  }
+  
+}
+
+.tile:hover {
+  text-decoration: none;
+  .u {
+     text-decoration: underline; 
+  }
+  .o {
+     .opacity(.8);
+  }
+  .icon-play {
+     background-position: -40px -100px;
+  }
+}
+ 
+//------------------
+// Event
+//------------------  
+
+.event-item .date-box{
+    float: left; 
+    width: 53px;
+    border: 3px solid black;
+    text-align: center;
+    text-decoration: none;
+    margin-right: 24px;
+ } 
+.event-item .month{
+   .color-framework .white; 
+   .color-framework .black-bg;
+   .type-framework .lambda;
+    display: block;
+    padding: 2px 0 2px 0;   
+ }  
+.event-item .day{
+   .color-framework .white; 
+   .color-framework .teal-bg;
+    display: block;
+    font: normal 32px/40px 'TradeGothicW02-BoldCn20 675505',Arial, Helvetica, Verdana, sans-serif;text-transform: uppercase;
+    padding: 0 0 6px 0;   
+ } 
+ 
+.event-item.day:hover{
+   .color-framework .steelblue-bg;
+ }  
+ 
+.container .event-item{
+    margin-bottom: 20px;
+ } 
+ 
+//------------------
+// News Item
+//------------------  
+ .news-item a{ 
+    .color-framework .teal;  
+} 
+ .news-item{ 
+     margin: 20px 0 20px 0;  
+} 
+ .news-item img{
+    .component-framework.stroke3
+}
+
+
+//------------------
+// Slideshow
+//------------------  
+ .slideshow-pattern { 
+ 
+    &.dark {
+       .stroke2 {
+          border-color: white;
+       }
+    }
+ 
+    .clearfix();
+    width: 100%;
+ 
+    .slideshow-viewport {
+       margin-bottom: 16px;
+       > img {
+         display: block;
+       }
+    }
+    
+    .disabled {
+       cursor: default;
+    }
+    
+    .slideshow-thumbnails {
+       a {
+          background-color: white;
+       }
+    }
+    
+    .slideshow-nav,
+    .slideshow-thumbnails {
+       margin: 0;
+       padding: 0;
+       
+       > li {
+          float: left;
+          list-style-type: none;
+          margin-right: 8px;
+          
+          > a {
+            display: block;
+            > img {
+               display: block;
+               &:hover {
+                  .opacity(.5);
+
+               }
+            }
+          }
+          
+          &:before {
+             display: none;
+          }
+          
+       }
+       
+       
+       > li.active {
+          img {
+             .opacity(.5);
+          }
+       }
+       
+       
+    }
+    
+    .slideshow-nav {
+       float: right;
+    }
+
+}
+
+ 
+}
+ 
+ 
+ 

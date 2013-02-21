@@ -1,0 +1,34 @@
+
+
+
+1)
+
+Move jquery to the top of the head
+
+Add this next
+
+        <!--#include virtual="/shared/ssi/universal.head.html"-->
+    
+Add this to the site's CSS
+
+        html #header h1 {background-image: url("http://webdev.hbs.edu/framework/designs-header-footer-2011/2011_framework_2code/banner/assets/site_headers/head-BusEnv.png");}
+        ul,li {margin:0;padding:0}
+        ul li {list-style: none;}
+    
+    
+Delete any references to core.css 
+
+Delete a search box if it is in the #header
+
+2) 
+
+Add this after the edit buttons on the site, delete an existing supernav if it is on the site
+
+        <!--#include virtual="/shared/ssi/universal.header.html"-->
+
+
+3)
+
+Add this after the closing #container tag, should be the last element in the body tag
+
+        <!--#include virtual="/shared/ssi/universal.footer.html"-->

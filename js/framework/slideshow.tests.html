@@ -1,0 +1,61 @@
+<h1><a class="black section" name="slideshow">slideshow</a></h1>
+<p>The slideshow module activates page slideshows</p>
+
+<div class="row">
+<div class="span6">
+<h5>html markup</h5>
+<textarea class="prettyprint">
+<div class="slideshow-container">
+    <ul class="slideshow-images">
+        <li><img src="http://ipsumimage.appspot.com/260x180"/></li>
+        <li><img src="http://ipsumimage.appspot.com/260x181"/></li>
+    </ul>
+</div>
+</textarea>
+</div>
+<div class="span6 js-framework salmon-inherit">
+<h5>results</h5>
+
+    <div class="slideshow-container">
+        <ul class="slideshow-images">
+            <li><img src="http://placehold.it/140x100" xsrc="http://ipsumimage.appspot.com/260x180"/></li>
+            <li><img src="http://placehold.it/140x101" xsrc="http://ipsumimage.appspot.com/260x181"/></li>
+            <li><img src="http://placehold.it/140x102" xsrc="http://ipsumimage.appspot.com/260x181"/></li>
+            <li><img src="http://placehold.it/140x103" xsrc="http://ipsumimage.appspot.com/260x181"/></li>
+        </ul>
+    </div>
+    <br/>
+    <div class="black-bg" style="padding: 20px">
+        <div class="slideshow-container dark">
+            <ul class="slideshow-images">
+                <li><img src="http://placehold.it/140x100" xsrc="http://ipsumimage.appspot.com/260x180"/></li>
+                <li><img src="http://placehold.it/140x101" xsrc="http://ipsumimage.appspot.com/260x181"/></li>
+                <li><img src="http://placehold.it/140x102" xsrc="http://ipsumimage.appspot.com/260x181"/></li>
+                <li><img src="http://placehold.it/140x103" xsrc="http://ipsumimage.appspot.com/260x181"/></li>
+            </ul>
+        </div>
+    </div>
+
+
+</div>
+</div>
+
+<!--
+
+TEST CASES
+
+
+-->
+<script type="text/javascript">
+require(['domready!'],function(){
+
+   test("slideshow", function() {
+     ok(true,'no test cases');
+
+   });
+     
+});
+</script>
+
+
+

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>WCM</title>
+    <!--#include file="ssi/head.html"-->
+    <style type="text/css">
+     h1,.hr4, h2, h3 {margin: 1em 0;}
+    </style>
+    <script type="text/javascript">
+    require.config({paths: {wcm: 'http://webdev.hbs.edu/sharepoint/wcm/js'}});
+    require(["wcm/wcm.main"], function (WCM) { WCM.installAuthoring();});
+    </script>
+</head>
+
+<body>
+
+<!--#include virtual="/shared/ssi/universal.header.html"-->
+
+<div class="type-framework color-framework grid-framework component-framework pattern-framework js-framework">
+<div class="h2-gamma-uc h3-epsilon-uc">
+
+<!--#include virtual="ssi/header.html"-->
+<div class="teal-bg">
+<div class="container site-header">
+<div class="delta white">WCM Extensions</div>
+<p class="theta">Default HBS WCM tools.</p>
+</div>
+</div>
+
+<div class="container">
+<br/>
+<p>Library to aid in the construction of WCM sites.</p>
+
+<div id="table-of-contents"></div>
+<div class="hr4"></div>
+
+
+
+<h2><a class="section black" name="Starter">Starter Pages</a></h2>
+
+<ul>
+ <li><a href="http://webdev.hbs.edu/framework/sharepoint/starter/_catalogs/HBSStarter.master">Starter Master Page</a></li>
+ <li><a href="http://webdev.hbs.edu/framework/sharepoint/starter/_catalogs/HBSStarterAuthoring.master">Starter Authoring Master Page</a></li>
+ <li><a href="http://webdev.hbs.edu/framework/sharepoint/starter/_catalogs/HBSStarterLayout.aspx">Starter Layout Page</a></li>
+ <li><a href="http://webdev.hbs.edu/framework/sharepoint/starter/_catalogs/masterpage/Editing%20Menu/CustomSiteAction.xml">CustomSiteAction.xml</a></li>
+</ul>
+
+
+
+
+<br/>
+
+<div class="hr4"></div>
+
+
+
+
+
+<h2><a class="section black" name="Authoring">Authoring</a></h2>
+<div class="row">
+<div class="span8">
+<textarea class="prettyprint">
+// load the wcm library
+require.config({paths: {wcm: 'http://webdev.hbs.edu/sharepoint/wcm/js'}});
+require(["wcm/wcm.main"], function (WCM) { WCM.installAuthoring();});
+</textarea>
+</div>
+</div>
+
+<h3><a class="section black" indent=".." name="Overlay">Overlay</a></h3>
+
+<p>Add an <code>?overlay=</code> parameter to the page to see an overlay</p>
+
+<textarea class="prettyprint">
+http://authdev.hbs.edu/about/Pages/default.aspx?
+  overlay=http://authdev.hbs.edu/Style%20Library/hbs/about/images/overlays/HBSAbout_Home_FINAL.png
+</textarea>
+
+<p>Or embed the overlays in the template and extract with <code>overlay=1</code></p>
+<textarea class="prettyprint">
+http://authdev.hbs.edu/about/Pages/default.aspx?overlay=1
+  
+<asp:Content ContentPlaceholderID="PlaceHolderAdditionalPageHead" runat="server">
+<link rel="overlay" href="/Style%20Library/hbs/about/images/overlays/HBSAbout_PressRelease_FINAL_NoImage.png"/>
+</asp:Content>
+
+</textarea>
+
+
+<p>Add an <code>?overlay=grid</code> parameter to the page to see the grid</p>
+
+<textarea class="prettyprint">
+http://authdev.hbs.edu/about/Pages/default.aspx?overlay=grid
+</textarea>
+
+<h3><a class="section black" indent=".." name="Overlay">Grid Overlay</a></h3>
+
+<p>Press <code>CTL+SHIFT</code> to view the overlay grid</p>
+
+<p class="debug-lines" style="height:50px">
+
+</p>
+
+<h3><a class="section black" indent=".." name="Cache">Clear Cache</a></h3>
+
+<p>Add an <code>?_hbs_cache_disabled=1</code> parameter to clear any page caching</p>
+
+<textarea class="prettyprint">
+http://authdev.hbs.edu/about/Pages/default.aspx?_hbs_cache_disabled=1
+</textarea>
+
+<h3><a class="section black" indent=".." name="Anon">Anonymous MasterPage</a></h3>
+
+<p>Add an <code>?_hbs_masterpage_anonymous=1</code> parameter to switch to the ribbon-free masterpage.</p>
+
+<textarea class="prettyprint">
+http://authdev.hbs.edu/about/Pages/default.aspx?_hbs_masterpage_anonymous=1
+</textarea>
+
+<h3><a class="section black" indent=".." name="Edit">Edit Chevron</a></h3>
+
+<p>Add an edit chevron with the <code>data-wcm-edit-url</code> attribute</p>
+
+<textarea class="prettyprint">
+<div data-wcm-edit-url="/Lists/Newsroom/EditForm.aspx?ID=30429" data-wcm-edit-label="News Item">
+   ....
+</div>
+</textarea>
+</div>
+
+
+
+
+
+</div>
+
+</div>
+
+<br/><br/><br/><br/><br/>
+</div>
+</div>
+<!--#include virtual="/shared/ssi/universal.footer.html"-->
+</body>
+</html>

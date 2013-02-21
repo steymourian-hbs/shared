@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <title>HBS CSS Framework Guide</title>
+    <!--#include file="ssi/head.html"--> 
+    <style type="text/css">
+    #css-nav {color: white;}
+    h1 {margin: 16px 0;}
+    h2 {margin: 1em 0;}
+    h3 {margin: 1em 0;}
+    </style>
+    <script type="text/javascript">
+    jQuery(function($){
+      $("#duplicate-ul").each(function(){
+        var html = $(this).html();
+        $(this).next().append(html);
+        $(this).next().children("div").each(function(){
+             this.className = this.className + '-uc';
+             $(this).text($(this).text() + '-uc')
+        })
+      })
+    });
+    </script>
+
+</head>
+
+<body>
+
+<!--#include virtual="/shared/ssi/universal.header.html"-->
+
+<div class="type-framework color-framework grid-framework component-framework pattern-framework js-framework">
+
+<!--#include file="ssi/header.html"-->
+<div class="teal-bg">
+<div class="container site-header">
+<div class="delta white">CSS</div>
+<p class="theta">Simple and flexible HTML, CSS, and Javascript for popular user interface components and interactions.</p>
+
+</div>
+</div>
+
+
+<div class="container">
+<div id="table-of-contents"></div>
+<div class="hr4"></div>
+</div>
+
+<div class="h2-epsilon-uc h3-kappa-uc">
+
+<!--#include file="framework/type.html"-->
+<!--#include file="framework/grid.html"-->
+<!--#include file="framework/color.html"-->
+<!--#include file="framework/component.html"-->
+<!--#include file="framework/pattern.html"-->
+<!--#include file="framework/notes.html"-->
+
+</div>
+
+<br/><br/><br/><br/><br/>
+</div>
+<!--#include virtual="/shared/ssi/universal.footer.html"-->
+</body>
+</html>

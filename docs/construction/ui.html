@@ -1,0 +1,40 @@
+<head>
+   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/shared/css/framework.css"/>
+
+   <script type="text/javascript" src="/shared/js/framework/require.js"></script>
+   <script type="text/javascript">
+   // this allows us to develop without needing to rebuild
+   require.config({
+        paths: {
+            jquery: '/shared/js/framework/jquery',
+            framework: '/shared/js/framework'
+        }
+   });
+   require(["framework/js-framework","framework/framework.main"])
+
+   
+   </script>
+   
+
+</head>
+<body>
+<div class="type-framework color-framework grid-framework component-framework pattern-framework js-framework">
+    <div class="-inherit" style="xdisplay:table">
+    <div class="inherit-bg" style="xdisplay:table-row">
+        <div class="container">
+        <br/><br/>
+        <div class="row">
+           <div class="span2">
+           
+           
+                <input class="field datepicker"/>
+                <br/><br/>
+           </div>
+         </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

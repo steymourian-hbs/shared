@@ -1,0 +1,45 @@
+<h1><a class="black section" name="obfuscate">obfuscate</a></h1>
+<p>The obfuscate module hides email address from crawlers</p>
+
+<div class="row">
+<div class="span6">
+<h5>html markup</h5>
+<textarea class="prettyprint">
+<a class="to" href="#">jgriffi+hbs.edu</a>
+<a class="to" href="mailto:jgriffi+hbs.edu">Contact Us</a>
+</textarea>
+</div>
+<div class="span6 js-framework">
+<h5>results</h5>
+<p><a class="to" href="#">jgriffi+hbs.edu</a></p>
+<p><a class="to" href="mailto:jgriffi+hbs.edu">Contact Us</a></p>
+
+</div>
+</div>
+
+<!--
+
+TEST CASES
+
+-->
+<script type="text/javascript">
+require(['framework/obfuscate'],function(obfuscate){
+
+   test("obfuscate", function() {
+     var t = $('<a class="to" href="#">jgriffi+hbs.edu</a>')[0];
+     obfuscate(t);
+     ok(t.href == 'mailto:jgriffi@hbs.edu','email 1 is obfuscated')
+     ok(t.innerHTML == 'jgriffi@hbs.edu','email html 1 is obfuscated')
+     
+     t = $('<a class="to" href="mailto:jgriffi+hbs.edu">Contact Us</a>')[0];
+     obfuscate(t);
+     ok(t.href == 'mailto:jgriffi@hbs.edu','email 2 is obfuscated')
+     ok(t.innerHTML == 'Contact Us','email html 2 is preserved')
+     
+   });
+     
+});
+</script>
+
+
+

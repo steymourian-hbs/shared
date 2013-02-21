@@ -1,0 +1,29 @@
+<h1><a class="black section" name="smoothscroll">smoothscroll</a></h1>
+<p>The smoothscroll module animates on-page anchor links</p>
+
+<div class="row" id="smoothscroll-test">
+<div class="span6">
+<h5>html markup</h5>
+<textarea class="prettyprint">
+<p><a href="#anchor">Click me</a></p>
+<p id="anchor">Focus on me</p>
+</textarea>
+</div>
+<div class="span6 js-framework">
+<h5>results</h5>
+<p><a href="#anchor">Click me</a></p>
+<p id="anchor">Focus on me</p>
+</div>
+</div>
+
+
+<script type="text/javascript">
+require(['domready!'],function(){
+   test("smoothscroll", function() {
+     var a = $("#smoothscroll-test a");
+     a.trigger('click','mock');
+     ok(a.hasClass('smooth-scroll-mock'),"Smoothscroll occurred")
+   });
+     
+});
+</script>

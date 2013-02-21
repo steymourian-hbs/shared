@@ -1,0 +1,219 @@
+/*
+// core.css - Sitewide CSS 
+//
+// $Author: jgriffith $
+// $Date: 2010-12-07 11:58:10 -0500 (Tue, 07 Dec 2010) $
+// $Revision: 111191 $
+*/
+
+/* Updated for 2012 Header and Footer Retrofit, Removed supernav rules, removed ShareThis rules - MSB */
+
+html, body, p, div, h1, h2, h3, h4, h5, h6, form, input, fieldset, dl, dd, dt { margin:0; padding:0; }
+img, fieldset { border: none; }
+  
+
+body { 
+    font: normal 62.5% Verdana, Arial, sans-serif; 
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    color: black;
+}
+
+a { 
+     text-decoration: none; 
+     color: #336699; 
+} 
+
+a:hover { 
+     text-decoration: underline; 
+}
+
+a:visited { 
+     color: #551A8B; 
+}  
+
+.clear { clear: both; width: 0; height: 0; }
+
+
+/*
+==========================================================
+SUPERNAV 
+==========================================================
+*/
+
+/* Replaced by supernav rules in framework.css */
+
+/*
+==========================================================
+HEADER 
+==========================================================
+*/
+
+#header {
+    width: 960px;
+    clear: left;
+    margin: 0 auto;
+}
+    
+#header h1 {
+    float: left;
+    margin: 0;
+    padding: 12px 0 11px 0;
+    background-position: 0 12px;
+    background-repeat: no-repeat;
+}
+
+#header #print-banner {
+    display: none;
+}
+
+#header h1 a {
+    display:block;
+    height:74px;
+    width: 750px;
+    text-indent:-10000px;
+}
+
+#header  h1 a img {
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+#header h1 a.last {
+    margin-top: .55em;
+}
+    
+
+#header #nav {
+    margin: 0;
+    height: 30px;
+    clear: both;
+    padding-left: 24px;
+}
+
+#header #nav ul {
+    list-style-type: none;
+    margin: 0; 
+    margin-top: 9px;
+    float: left;
+    padding: 0;
+}
+
+#header #nav ul li {
+    display: inline;
+    padding: 0.3em 1.3em 0.3em 0;
+}
+    
+#header #nav a {
+    font-size: 1.1em;
+    font-weight: bold;
+    line-height: 13px;
+    text-decoration: none;
+}
+
+
+
+/* 
+==========================================================
+BODY AREA
+==========================================================
+*/
+
+#content-wrap {
+    width: 960px;
+    margin: 0 auto;
+    clear: left;
+    min-height: 450px;
+    height:auto !important;
+    height:450px;
+}
+
+a.ext {
+    background: transparent url(../images/site/icon.ext.gif) no-repeat center right; 
+    padding: 0 19px 1px 0;
+}
+
+a.pdf {
+    background: url(../images/site/icon.pdf.gif) no-repeat top left; 
+    padding: 0 0 1px 15px;
+}
+
+a.video{
+    background: url(../images/site/icon.video.gif) no-repeat 0 50%; 
+    padding-left: 20px;
+}
+
+a.mail, a.to {
+    background: url(../images/site/icon.envelope.gif) no-repeat 0 4px; 
+    padding-left: 14px;
+}
+
+
+
+/*
+========================================================== 
+FOOTER 
+==========================================================
+*/
+
+#footer {
+    width: 960px;
+    margin: 25px auto 0 auto;
+    padding-bottom: 40px;
+    font-size: 11px;
+    clear: both;
+}
+
+#copyright {
+    float: left;
+    color: #999;
+    padding: .4em 2em .4em 35px;
+    border-right: 1px solid #b2b2b2;
+    margin-right: 1em;
+}
+
+#footer ul {
+    padding: .4em 0;
+    margin: 0;
+    white-space: nowrap;
+}
+
+#footer ul li {
+    display: inline;
+    padding: 0 .6em;
+}
+
+#footer ul li.last {
+    padding-right: 0;
+
+}
+#footer a {
+    color: #90002A;   
+    text-decoration: none;
+}
+#footer a:hover {
+    text-decoration: underline;
+}
+
+#footer .links {
+    clear: both;
+    text-align: right;
+    padding: 1em 2.1em 0 0;
+}
+
+#footer .links span {
+    padding-left: 2em;
+    color: #a5acb2;
+}
+
+#footer .links span a {
+    color: #a5acb2;
+    text-decoration: underline;
+}
+
+#footer .links #rss {
+    background: url('/mba/images/site/rss.gif') no-repeat center left;
+    padding-left: 16px;
+}

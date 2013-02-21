@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>HBS CSS Framework Test Styles</title>
+    <script type="text/javascript" src="/framework/js/jquery.js"></script>
+    <!--#include virtual="/shared/ssi/universal.head.html"-->
+    <link rel="stylesheet" type="text/css" href="../../css/framework-dev2.css"/>
+
+
+</head>
+
+<body>
+
+<!--#include virtual="/shared/ssi/universal.header.html"-->
+
+<div class="type-framework color-framework grid-framework component-framework pattern-framework">
+
+<br/>
+
+<style type="text/css">
+
+
+
+
+
+</style>
+
+<script type="text/javascript">
+jQuery(function($){
+  //$(document).on("hover",".dropdown-toggle",function(){
+  $(".dropdown-toggle").hover(function(){
+    $(this).toggleClass("black-bg white ink");
+    $(".icon-select, .icon-select-inverted",this).toggleClass("icon-select icon-select-inverted inherit-bg");
+  })
+});
+</script>
+
+<div class="orange-bg">
+<div class="container debug-lines">
+<div class="alpha">Alpha</div>
+<div class="beta" style="margin-top:5px;">Beta</div>
+<div class="gamma">Gamma</div>
+
+</div>
+</div>
+
+<br/><br/>
+<br/><br/>
+<br/><br/>
+
+
+<div class="container" >
+    <div class="row">
+        <div class="span4"><div class="shim1"></div></div>
+        <div class="span4" style="height:1px;">
+
+        <div style="position:relative; top: -100px;background:yellow;">move box</div>
+hello<br/>hello<br/>hello<br/>
+hello<br/>hello<br/>hello<br/>
+hello<br/>hello<br/>hello<br/>
+hello<br/>hello<br/>hello<br/>
+hello<br/>hello<br/>hello<br/>
+hello<br/>hello<br/>hello<br/>
+hello<br/>hello<br/>hello<br/>
+hello<br/>hello<br/>hello<br/>
+hello<br/>hello<br/>hello<br/>
+hello<br/>hello<br/>hello<br/>
+hello<br/>hello<br/>hello<br/>
+        </div>
+    </div>
+</div>
+
+<div class="container steelblue-bg">
+    <div class="row">
+        <div class="span4">1hello<br/>hello<br/></div>
+        <div class="span4">2<div class="shim1"></div></div>
+        <div class="span4">
+         <h3 style="margin-top: 20px">test</h3>
+        3hello<br/>hello<br/></div>
+    </div>
+</div>
+
+
+</div>
+
+
+
+
+
+<!--#include virtual="/shared/ssi/universal.footer.html"-->
+</body>
+</html>

@@ -1,0 +1,7 @@
+body { font: normal 10pt Arial, Verdana, sans-serif; background-color: #ffffff; }
+img { border: 0; }
+#container { line-height: 1.3em;}
+#footer,#subnav,#supernav,.wps-widget,#nav,#search,#branding,#edit_button, #sidebar,#superfooter{ display: none; }
+#header h1 a {font-size: 8pt;text-transform: uppercase;text-decoration: none;color: black;font-family: Verdana;} 
+#header h1 {border-bottom: 1px dashed black;margin-bottom: 0;}
+#content h2 {margin-top: 5px;font-family:Georgia,Times New Roman,serif;font-size: 22pt;font-weight: normal;line-height: 1em;}

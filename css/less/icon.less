@@ -1,0 +1,87 @@
+.component-framework {
+
+   .sprite(@w,@h,@x,@y){
+     background-image: ~"url('../images/framework/3.0/framework.png')";
+     background-repeat: no-repeat;
+     display: inline-block;  
+     background-position: -@x -@y;
+     width: @w;
+     height: @h;
+   }
+   
+   [class^="icon-"].fade, [class*=" icon-"].fade {
+      .opacity(0.4); 
+  }
+  
+  
+  .icon-circle-arrow-up                { .sprite(20px,20px,0,0);               }
+  .icon-circle-arrow-up-white          { .sprite(20px,20px,25px,0);            }
+  .icon-circle-arrow-up-inverted       { .sprite(20px,20px,0,25px);            }
+  .icon-circle-arrow-up-white-inverted { .sprite(20px,20px,25px,25px);         }
+  
+  .icon-circle-arrow-right             { .sprite(20px,20px,50px,0);            }
+  .icon-circle-arrow-right-inverted    { .sprite(20px,20px,50px,25px);            }
+  .icon-circle-arrow-right-white       { .sprite(20px,20px,75px,0);            }
+  .icon-circle-arrow-right-white-inverted { .sprite(20px,20px,75px,25px);            }
+  
+  .icon-circle-arrow-down              { .sprite(20px,20px,100px,0);           }
+  .icon-circle-arrow-down-inverted     { .sprite(20px,20px,100px,25px);           }  
+  .icon-circle-arrow-down-white        { .sprite(20px,20px,125px,0);           }
+  .icon-circle-arrow-down-white-inverted     { .sprite(20px,20px,125px,25px);    }
+
+  .icon-circle-arrow-left              { .sprite(20px,20px,150px,0);           }
+  .icon-circle-arrow-left-inverted     { .sprite(20px,20px,150px,25px);        }
+  .icon-circle-arrow-left-white        { .sprite(20px,20px,175px,0);           }
+  .icon-circle-arrow-left-white-inverted  { .sprite(20px,20px,175px,25px);     }
+
+  .icon-checkbox                       { .sprite(13px,14px,220px,0);           }
+  .icon-checkbox-checked               { .sprite(13px,14px,240px,0);           }
+  .icon-radio                          { .sprite(13px,13px,220px,20px);           }
+  .icon-radio-checked                  { .sprite(13px,13px,240px,20px);           }
+  .icon-plusbox                        { .sprite(11px,11px,220px,40px);           }
+  .icon-minusbox                       { .sprite(11px,11px,240px,40px);           }
+
+  .icon-dot                            { .sprite(5px,5px,20px,100px);           }
+  .icon-dot-inverted                   { .sprite(5px,5px,20px,106px);           }
+  .icon-dot-white                      { .sprite(5px,5px,30px,100px);           }
+  .icon-dot-white-inverted             { .sprite(5px,5px,30px,106px);           }
+
+  .icon-select                         { .sprite(8px,14px,220px,60px);        }
+  .icon-select-inverted                { .sprite(8px,14px,260px,60px);        }
+ 
+  
+  .icon-circle-close-red               { .sprite(20px,20px,0px,60px);        }
+  .icon-square-close-red               { .sprite(15px,14px,80px,100px);        }  
+  .icon-square-close-micro             { .sprite(9px,9px,100px,100px);        }  
+  .icon-play                           { .sprite(39px,33px,40px,60px);        }
+  .icon-play-teal                      { .sprite(39px,33px,40px,100px);        }
+
+  .icon-itunes                      { .sprite(16px,16px,80px,60px);        }
+  .icon-facebook                      { .sprite(16px,16px,100px,60px);        }
+  .icon-youtube                      { .sprite(16px,16px,120px,60px);        }
+  .icon-twitter                      { .sprite(16px,16px,140px,60px);        }
+  .icon-rss                      { .sprite(16px,16px,80px,80px);        }
+  .icon-linkedin                      { .sprite(16px,16px,100px,80px);        }
+  .icon-pdf                           { .sprite(14px,15px,120px,80px);        }
+  .icon-share                      { .sprite(14px,15px,20px,140px);        }
+  .icon-share-white                { .sprite(14px,15px,0,140px);        }
+  .icon-email                      { .sprite(14px,15px,20px,155px);        }
+  .icon-email-white                { .sprite(14px,15px,0,155px);        }
+  
+  .icon-expand                      { .sprite(13px,11px,220px,80px);        }
+  .icon-expand-white                { .sprite(13px,11px,240px,80px);        }
+  .icon-expand-inverted             { .sprite(13px,11px,260px,80px);        }
+  .icon-expand-white-inverted       { .sprite(13px,11px,280px,80px);        }
+  .icon-collapse                    { .sprite(13px,11px,220px,100px);        }
+  .icon-collapse-white              { .sprite(13px,11px,240px,100px);        }
+  .icon-collapse-inverted           { .sprite(13px,11px,260px,100px);        }
+  .icon-collapse-white-inverted     { .sprite(13px,11px,280px,100px);        }
+  
+  .icon-footer-expand               { .sprite(13px,11px,120px,100px);        }  
+  .icon-footer-collapse            { .sprite(13px,11px,140px,100px);        }  
+  
+  .icon-back-to-top                 { .sprite(66px,66px,0px,220px);        }
+ 
+  .icon-transition-bg-color { .transition(background-color .2s linear);  }
+
+}

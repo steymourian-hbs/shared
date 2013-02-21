@@ -1,0 +1,10 @@
+
+1) Confirm no JS errors in all the browsers.
+
+2) Load the video catalog http://www.hbs.edu/videos/protected/fs/catalog.html and click 10 random videos with IE and FF
+
+3) Load a handful of landing pages and confirm they play and have sharethis widgets
+
+4) Click the videos under the deans site http://www.hbs.edu/dean/
+
+5) Click the videos on the homepage of exed http://www.exed.hbs.edu/Pages/default.aspx

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>HBS CSS Framework Test Styles</title>
+    <script type="text/javascript" src="/framework/js/jquery.js"></script>
+    <!--#include virtual="/shared/ssi/universal.head.html"-->
+
+
+    <style type="text/css">
+    pre.prettyprint {
+       font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+       line-height: 1.1;
+       font-size: 12px;
+       margin-bottom: 8px;
+    }
+
+    code {
+       font-weight: bold;
+       font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+       background-color: #eee;
+    }
+    </style>
+</head>
+
+<body>
+
+<!--#include virtual="/shared/ssi/universal.header.html"-->
+
+<div class="type-framework color-framework grid-framework component-framework pattern-framework">
+
+
+<div class="teal-bg">
+<div class="container site-header">
+<h1 class="gamma white">CSS Examples</h1>
+</div>
+</div>
+
+<div class="container">
+
+
+<div class="twitter-stream">
+<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script>
+new TWTR.Widget({
+  version: 2,
+  type: 'profile',
+  rpp: 3,
+  interval: 6000,
+  width: 260,
+  height: 500,
+  theme: {
+    shell: {
+      background: '#ffffff',
+      color: '#ffffff'
+    },
+    tweets: {
+      background: '#ffffff',
+      color: '#181818',
+      links: '#9c1b35'
+    }
+  },
+  features: {
+    scrollbar: false,
+    loop: false,
+    live: false,
+    hashtags: false,
+    timestamp: true,
+    avatars: false,
+    behavior: 'all'
+  }
+}).render().setUser('hbsrecruitmba').start();
+</script>
+</div>
+
+<br clear="all" />
+
+
+</div>
+
+
+<br/><br/><br/><br/><br/>
+</div>
+<!--#include virtual="/shared/ssi/universal.footer.html"-->
+</body>
+</html>

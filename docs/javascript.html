@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<title>Framework JS</title>
+<script type="text/javascript" src="http://code.jquery.com/qunit/qunit-1.10.0.js"></script>
+<link rel="stylesheet" type="text/css" href="http://code.jquery.com/qunit/qunit-1.10.0.css"/>
+<!--#include virtual="ssi/head.html"-->
+<style type="text/css">
+h1,.hr4 {margin: 16px 0;}
+h5{ margin-bottom: 8px;}
+#js-nav {color: white;}
+
+</style>
+<script>
+window.scrollTo = function(){} // qunit scrolls to the top
+</script>
+<body>
+<!--#include virtual="/shared/ssi/universal.header.html"-->
+<div class="type-framework color-framework grid-framework component-framework pattern-framework">
+<!--#include virtual="ssi/header.html"-->
+<div class="teal-bg">
+<div class="container site-header">
+<div class="delta white">Javascript</div>
+<p class="theta">Functions used in the HBS javascript environment.</p>
+</div>
+</div>
+
+<div class="container">
+<br/>
+<p>Supports jQuery 
+<a href="?jquery-version=1.8.1">v1.8.1</a>
+<a href="?jquery-version=1.7.1 ">v1.7.1</a> 
+</p>
+<div id="table-of-contents"></div>
+<div class="hr4"></div>
+
+
+<p>If you modify the dom, you can reload these events with a document trigger</p>
+<textarea class="prettyprint">
+$(document).trigger("framework.domupdate")
+</textarea>
+<br/>
+<div class="hr4"></div>
+
+</div>
+
+
+<div class="container h1-gamma h5-kappa">
+
+   <!--#include virtual="/shared/js/framework/expandable.tests.html"-->  
+   <div class="hr4"></div>
+   
+   <!--#include virtual="/shared/js/framework/links.tests.html"-->  
+   <div class="hr4"></div>
+
+   <!--#include virtual="/shared/js/framework/tabs.tests.html"-->  
+   <div class="hr4"></div>
+
+   <!--#include virtual="/shared/js/framework/toggle.tests.html"-->  
+   <div class="hr4"></div>
+   
+   <!--#include virtual="/shared/js/framework/carousel.tests.html"-->  
+   <div class="hr4"></div>
+
+   <!--#include virtual="/shared/js/framework/slideshow.tests.html"-->  
+   <div class="hr4"></div>
+   
+   <!--#include virtual="/shared/js/framework/dropdown.tests.html"-->  
+   <div class="hr4"></div>
+   
+   <!--#include virtual="/shared/js/framework/trim.tests.html"-->  
+   <div class="hr4"></div>
+   
+   <!--#include virtual="/shared/js/framework/obfuscate.tests.html"-->  
+   <div class="hr4"></div>
+
+   <!--#include virtual="/shared/js/framework/datepicker.tests.html"-->  
+   <div class="hr4"></div>
+   
+   <!--#include virtual="/shared/js/framework/timeago.tests.html"-->  
+   <div class="hr4"></div>
+   
+   <!--#include virtual="/shared/js/framework/smoothscroll.tests.html"-->  
+   <div class="hr4"></div>
+
+   <!--#include virtual="/shared/js/framework/backtotop.tests.html"-->  
+   <div class="hr4"></div>
+   
+   <script type="text/javascript">
+     // lets trigger a domupdate to make sure things aren't double-bound
+     $(window).load(function(){$("body").trigger("framework.domupdate")});
+   </script>
+   
+   <div id="qunit"></div>
+   
+</div>
+
+</div>
+<br/><br/>
+<br/><br/>
+<!--#include virtual="/shared/ssi/universal.footer.html"-->
+</body>
+</html>

@@ -1,0 +1,50 @@
+/* Print styles for legacy Web sites not using framework v3 */
+body { 
+	font: normal 10pt Arial, Verdana, sans-serif !important; 
+}
+img { 
+	border: 0 !important; 
+}
+#header h1 a {
+	font-size: 8pt !important; 
+	text-transform: uppercase !important;
+	font-family: Verdana !important;
+	text-indent: 0 !important;
+} 
+#header h1 {
+	border-bottom: 1px dashed black !important;
+	margin-bottom: 24px !important;
+	padding-bottom: 0 !important; 
+}
+
+#content h2 {
+	font-family:Georgia,Times New Roman,serif;
+	font-size: 22pt;
+	font-weight: normal;
+	line-height: 1em;
+}
+#content h2,
+#content h3 {
+	margin: 2em 0 0.5em 0 !important;
+}
+#content p {
+	margin-bottom: 1em !important;
+}
+th,td {
+vertical-align: top !important;
+}
+#content ul{
+	margin: 0 !important;
+	padding: 0 !important;
+}
+#content ul li {
+	list-style: none !important;
+}
+#print-banner{
+	display: block !important;
+}
+#footer,#subnav,#supernav,.wps-widget,#nav,#search,#branding,#edit_button, #sidebar,.ancillary-nav { 
+	display: none; 
+}
+
+

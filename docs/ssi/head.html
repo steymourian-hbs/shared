@@ -1,0 +1,78 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+ 
+   <script type="text/javascript">
+   var v = "1.7.1";
+   if (/jquery-version=([.0-9]+)/.test(document.location.href)) { v = RegExp.$1; } 
+   document.write(unescape("%3Cscript src='//ajax.googleapis.com/ajax/libs/jquery/"+v+"/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));  
+   </script>
+    
+   <script type="text/javascript" src="../js/widgets.js"></script>
+
+   <script type="text/javascript" src="../js/framework.js"></script>
+  
+  <!--
+   <script type="text/javascript" src="../js/framework/require.js"></script>
+   <script type="text/javascript">
+   // this allows us to develop without needing to rebuild
+   require.config({
+        paths: {
+            jquery: '../js/framework/jquery',
+            framework: '../js/framework'
+        }
+   });
+   require(["framework/js-framework","framework/framework.main"])
+   
+   </script> -->
+   
+   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../css/framework.css"/>
+    <link rel="stylesheet" type="text/css" href="css/docs.css"/>
+    <script type="text/javascript" src="js/prettify.js"></script>
+    <script type="text/javascript" src="js/toc.js"></script>
+    <link href="css/prettify.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript">
+    jQuery(function($){
+      $("textarea.prettyprint").each(function(){
+         var v = $(this).val();
+         var $pre = $('<pre class="prettyprint"></pre>');
+         $pre.text(v);
+         $(this).replaceWith($pre)
+      });
+      prettyPrint();
+      
+      $(".draggable").draggable();
+      $(".draggable").hover(function(){$(this).fadeTo('fast',.5)},function(){$(this).fadeTo('fast',1)})
+      $(window).load(function(){
+      $(".draggable.toggle").each(function(){
+         $(this).wrap("<div></div>");
+         var $p = $(this).parent();
+         $p.find('img').hide();
+         $p.prepend('<div class="more"><a href="#" class="">Toggle Overlay</a></div>');
+         $p.on("click","a",function(){
+            $p.find('img').show();
+            $p.find('a').hide();
+            return false;
+         })
+      })
+      })
+    })
+  
+    </script>
+
+    <style type="text/css">
+
+    pre.prettyprint {
+       font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+       line-height: 1.1;
+       font-size: 12px;
+       margin-bottom: 8px;
+    }
+
+    code {
+       font-weight: bold;
+       font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+       background-color: #eee;
+    }
+    </style>

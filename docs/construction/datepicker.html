@@ -1,0 +1,37 @@
+<!doctype html>
+ 
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>jQuery UI Datepicker - Default functionality</title>
+  <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+  <!--<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>-->
+   <script type="text/javascript" src="/shared/js/framework/require.js"></script>
+   <script type="text/javascript">
+   // this allows us to develop without needing to rebuild
+   require.config({
+        paths: {
+            jquery: '/shared/js/framework/jquery',
+            framework: '/shared/js/framework'
+        }
+   });
+   require(["framework/js-framework","framework/framework.main"])
+   
+   </script>
+
+  <link rel="stylesheet" href="http://webdev.hbs.edu/shared/css/framework.css" />
+
+</head>
+<body>
+ 
+<div class="js-framework color-framework component-framework pattern-framework grid-framework type-framework">
+<br/><br/>
+<div class="orange-inherit container">
+<p>Date: <input type="text" class="datepicker" value="12/12/12" id="dp1"/></p>
+<p>Date: <input type="text" class="datepicker" value="12/12/12" id="dp2" /></p>
+</div>
+</div>
+ 
+ 
+</body>
+</html>

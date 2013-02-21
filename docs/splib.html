@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<title>SPLib</title>
+<!--#include virtual="ssi/head.html"-->
+
+<style type="text/css">
+h1,.hr4 {margin: 16px 0;}
+h5{ margin-bottom: 8px;}
+</style>
+
+<body>
+<!--#include virtual="/shared/ssi/universal.header.html"-->
+
+
+<div class="type-framework color-framework grid-framework component-framework pattern-framework">
+<!--#include virtual="ssi/header.html"-->
+<div class="teal-bg">
+<div class="container site-header">
+<div class="delta white">JSLib</div>
+<p class="theta">Sharepoint Javascript Client Library.</p>
+</div>
+</div>
+
+<div class="container h1-gamma">
+<br/>
+<p>Library to encapsulate common sharepoint client calls</p>
+<textarea class="prettyprint">
+<script type="text/javascript" src="http://webdev.hbs.edu/sharepoint/lib/splib.js"></script>
+</textarea>
+
+<div id="table-of-contents"></div>
+<div class="hr4"></div>
+
+
+<h1><a class="section black" name="Hello">Hello World</a></h1>
+<div class="row">
+<div class="span8">
+<textarea class="prettyprint">
+// load the sharepoint library
+SPLib.ready(function(lib){
+
+    // get the title of the current web
+    lib.getWeb({url:'/mba'},function(web){
+        alert("the web title is "+this.web.get_title());
+    });  
+    
+})
+</textarea>
+</div>
+</div>
+
+
+<!---  =========================================== -->
+
+<h1><a class="section black" name="queryItems">queryItems</a></h1>
+<div class="row">
+<div class="span8">
+<textarea class="prettyprint">
+
+// query all items in a list
+var camlQuery = SP.CamlQuery.createAllItemsQuery();
+
+lib.queryItems({url:'/mba',listName:'Profiles',query:camlQuery}, function(items){
+  var enumerator = items.getEnumerator();
+  while (enumerator.moveNext()) {
+     var item = enumerator.get_current();
+     console.info("item "+item.get_id() + " " + item.get_item('Title'));
+  }
+});
+
+
+// query a subset of items in a list
+var camlQuery = new SP.CamlQuery();
+var query = '<View><Query><Where><Eq><FieldRef Name="LegacyID"/>
+             <Value Type="Text">123</Value></Eq></Where></Query></View>';
+camlQuery.set_viewXml(query);
+
+lib.queryItems({url:'/',listName:'Newsroom',query:camlQuery}, function(items){
+  var enumerator = items.getEnumerator();
+  while (enumerator.moveNext()) {
+     var item = enumerator.get_current();
+     console.info("item "+item.get_id() + " " + item.get_item('Title'));
+  }
+});
+
+</textarea>
+</div>
+</div>
+
+
+<!---  =========================================== -->
+
+<h1><a class="section black" name="getWeb">getWeb</a></h1>
+<div class="row">
+<div class="span8">
+<textarea class="prettyprint">
+lib.getWeb({url:'/faculty/conferences'},function(web){
+  console.info("the web title is "+this.web.get_title());
+});
+</textarea>
+</div>
+</div>
+
+<!---  =========================================== -->
+
+<h1><a class="section black" name="getWeb">getSite</a></h1>
+<div class="row">
+<div class="span8">
+<textarea class="prettyprint">
+lib.getSite({url:'/faculty/conferences'},function(site){
+  console.info("the site title is "+this.site.get_title());
+});
+</textarea>
+</div>
+</div>
+
+<!---  =========================================== -->
+
+<h1><a class="section black" name="getList">getList</a></h1>
+<div class="row">
+<div class="span8">
+<textarea class="prettyprint">
+lib.getList({url:'/mba',listName:'Profiles'},function(list){
+   console.info("the list name is "+list.get_title());
+   confole.info("the list size is "+list.get_itemCount());
+});
+</textarea>
+</div>
+</div>
+
+
+<!---  =========================================== -->
+
+<h1><a class="section black" name="getFields">getFields</a></h1>
+<div class="row">
+<div class="span8">
+<textarea class="prettyprint">
+lib.getFields({url:'/mba'},function(fields){
+  var enumerator = fields.getEnumerator();
+  while (enumerator.moveNext()) {
+     var field = enumerator.get_current();
+     console.info("field "+field.get_title());
+  }
+});
+
+lib.getFields({listName:'Pages'},function(fields){
+  var enumerator = fields.getEnumerator();
+  while (enumerator.moveNext()) {
+     var field = enumerator.get_current();
+     if (field.get_title() == 'BuildStatus') {
+        alert(field.get_choices());
+     }
+  }
+});
+
+</textarea>
+</div>
+</div>
+
+<!---  =========================================== -->
+
+<h1><a class="section black" name="addItem">addItem</a></h1>
+<div class="row">
+<div class="span8">
+<textarea class="prettyprint">
+lib.addItem({url:'/mba',listName:'Profiles',itemVals:{Title:'hello'}},function(){
+   console.info("item added");
+})
+</textarea>
+</div>
+</div>
+   
+   
+<!---  =========================================== -->
+
+<h1><a class="section black" name="updateItem">updateItem</a></h1>
+<div class="row">
+<div class="span8">
+<textarea class="prettyprint">
+
+// updating a lookup field
+			
+var topics = [];
+var newLookUpField = new SP.FieldLookupValue();
+newLookUpField.set_lookupId(1);
+topics.push(newLookUpField);
+
+// updating a people picker field
+
+var persons = [];
+persons.push(SP.FieldUserValue.fromUser("jgriffith@hbs.edu");	
+
+// updating the record
+
+lib.updateItem({url:'/',listName:'Newsroom',
+                itemId:item.get_id(),
+                itemVals:{Title:'hello2',
+                          TopicField:topics,
+                          PeopleField:persons}},
+                function(item){
+                    console.info("item updated");
+                })
+
+</textarea>
+</div>
+</div>
+ 
+   
+<!---  =========================================== -->
+
+<h1><a class="section black" name="deleteItem">deleteItem</a></h1>
+<div class="row">
+<div class="span8">
+<textarea class="prettyprint">
+lib.deleteItem({url:'/mba',listName:'Profiles',itemId:3}, function(){
+  console.info("item removed");
+});
+</textarea>
+</div>
+</div>
+
+<!---  =========================================== -->
+
+<h1><a class="section black" name="ensureCheckedOutPage">ensureCheckedOutPage</a></h1>
+<div class="row">
+<div class="span8">
+<p>Checks in the page if it is checked out, then returns a checked out page.</p>
+<textarea class="prettyprint">
+lib.ensureCheckedOutPage({path:'/mba/Pages/default.aspx'},function(file){
+   
+});
+</textarea>
+</div>
+</div>
+
+<!---  =========================================== -->
+
+<h1><a class="section black" name="getCheckedInPage">getCheckedInPage</a></h1>
+<div class="row">
+<div class="span8">
+<p>Checks in the page.</p>
+<textarea class="prettyprint">
+lib.getCheckedInPage({path:'/mba/Pages/default.aspx'},function(file){
+   
+});
+</textarea>
+</div>
+</div>
+<!---  =========================================== -->
+
+<h1><a class="section black" name="getCheckedOutPage">getCheckedOutPage</a></h1>
+<div class="row">
+<div class="span8">
+<p>Checks out the page.</p>
+<textarea class="prettyprint">
+lib.getCheckedOutPage({path:'/mba/Pages/default.aspx'},function(file,item){
+   
+});
+</textarea>
+</div>
+</div>
+
+   
+<!---  =========================================== -->
+
+<h1><a class="section black" name="getCheckedInFile">getCheckedInFile</a></h1>
+<div class="row">
+<div class="span8">
+<p>Checks in the file.</p>
+<textarea class="prettyprint">
+lib.getCheckedInFile({path:'/mba/PublishingImages/photo.jpg'},function(file){
+   
+});
+</textarea>
+</div>
+</div>
+
+<!---  =========================================== -->
+
+<h1><a class="section black" name="getCheckedOutFile">getCheckedOutFile</a></h1>
+<div class="row">
+<div class="span8">
+<p>Checks out the file.</p>
+<textarea class="prettyprint">
+lib.getCheckedOutFile({path:'/mba/PublishingImages/photo.jpg'},function(file){
+   
+});
+</textarea>
+</div>
+</div>
+
+<!---  =========================================== -->
+
+<h1><a class="section black" name="getFile">getFile</a></h1>
+<div class="row">
+<div class="span8">
+<textarea class="prettyprint">
+lib.getFile({path:'/mba/PublishingImages/photo.jpg'},function(file,item,list){
+   
+});
+</textarea>
+</div>
+</div>
+   
+<!---  =========================================== -->
+
+<h1><a class="section black" name="getPage">getPage</a></h1>
+<div class="row">
+<div class="span8">
+<textarea class="prettyprint">
+lib.getPage({path:'/mba/Pages/default.aspx'},function(file,item){
+   
+});
+</textarea>
+</div>
+</div>
+
+<h1><a class="section black" name="getUserCollectionFromGroup">getUserCollectionFromGroup</a></h1>
+<div class="row">
+<div class="span8">
+<textarea class="prettyprint">
+lib.getUserCollectionFromGroup("Home Owners",function(users){
+   for(var i =0;i<users.length;i++) {
+     console.info(i,users[i]);
+   }
+});
+</textarea>
+</div>
+</div>
+
+
+   
+<!---  =========================================== -->
+
+<h1><a class="section black" name="onError">onError</a></h1>
+<div class="row">
+<div class="span8">
+<p>define a custom error handling</p>
+<textarea class="prettyprint">
+SPLib.onError = function(msg) {
+    alert("My Custom Error Message is "+msg);
+};
+</textarea>
+</div>
+</div>
+
+
+
+
+
+
+</div></div>
+<br/><br/>
+<br/><br/>
+<!--#include virtual="/shared/ssi/universal.footer.html"-->
+</body>
+</html>

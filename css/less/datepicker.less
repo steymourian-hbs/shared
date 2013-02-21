@@ -1,0 +1,104 @@
+
+.component-framework {
+
+   .datepicker-pattern.ui-datepicker-inline {
+     position: relative;
+     width: 250px;
+   }
+   
+   .datepicker-pattern > .ui-datepicker-header,
+   .datepicker-pattern.ui-datepicker-header {
+       background: black;
+       color: white;
+       width: 210px;
+       border: 20px solid black;
+       border-bottom: 0px;
+       
+       .ui-datepicker-title {
+         .type-framework .kappa-uc;
+         padding-bottom: 10px;
+         padding-left: 6px;
+       }
+       
+       .ui-datepicker-prev {
+         position: absolute;
+         bottom: 10px;
+         left: 22px;
+         cursor: pointer;
+         color: black;
+       }
+       
+       .ui-datepicker-next {
+         position: absolute;
+         bottom: 10px;
+         right: 22px;
+         cursor: pointer;
+         color: black;
+       }
+       
+   }
+
+   .datepicker-pattern > .ui-datepicker-calendar,
+   .datepicker-pattern.ui-datepicker-calendar {
+       background: black;
+       border: 20px solid black;
+       border-bottom: 43px solid black;
+       border-top: 0px;
+       width: 250px;
+       .type-framework .mu;
+       
+       td {
+          text-align: center;
+          border-left: 1px solid #333;
+          width: 18px;
+          height: 18px;
+          padding-left: 1px;
+       }
+       
+       td > .ui-state-default {
+          display: block;
+          //padding: 5px 0;
+          width: 18px;
+          height: 18px;
+          padding: 4px;
+          line-height: 1.3;
+       }
+       
+       tr > th:first-child,
+       tr > td:first-child {
+          border-left: none;
+       }
+       
+       th {
+          color: #68696C;
+          border-left: 1px solid #333;
+       }
+       
+       a {
+          color: white;
+          &:hover{text-decoration: none;}
+       }
+       
+       span.ui-state-default {
+          color: #555;
+       }
+       
+
+       
+       .ui-state-hover {
+         background-color: #777;
+         .rounded(13px);
+       }
+       
+       .ui-state-highlight {
+         background-color: #333;
+         .rounded(13px);
+       }
+       
+       .ui-state-active {
+         background-color: @hbsred;
+         .rounded(15px);
+       }
+       
+   }
+}

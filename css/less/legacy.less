@@ -1,0 +1,224 @@
+
+/* Subnav and sidebar list bullets removed */
+#subnav ul li,
+#sidebar ul li{list-style: none;}
+
+/*================================================================================
+
+Utils
+
+----------------------------------------------------------------------------------*/
+
+.clear { clear: both; width: 0; height: 0; }
+.clearfix:before,.cf:after { content:""; display:table;}
+.clearfix:after { clear:both; }
+.clearfix { zoom:1;}
+.hideme,
+.compliancetext{position: absolute;left: -9999px;}
+.todo {background-color: yellow;}
+
+/*================================================================================
+
+Links
+
+----------------------------------------------------------------------------------*/
+
+a { 
+     text-decoration: none; 
+     color: #336699; 
+} 
+
+.ms-WPBody a:hover,
+a:hover { 
+     text-decoration: underline; 
+}
+
+.ms-WPBody a:visited,
+a:visited { 
+     //color: #551A8B; 
+}  
+
+
+/*================================================================================
+
+Site Header
+
+This is used on framework v2 sites,  ie. healthcare, doctoral
+
+----------------------------------------------------------------------------------*/
+
+#header {
+    width: 960px;
+    clear: left;
+    margin: 0 auto;
+    position: relative; 
+}
+
+#header h1{
+    height: 45px; 
+    margin: 26px 0 8px 1px; 
+    padding: 0;
+    background-repeat: no-repeat;
+    clear: both;
+}
+
+#header h1 a {
+    display:block;
+    height:44px;
+    width: 750px;
+    text-indent:-10000px;
+}
+    
+#header #print-banner {
+    display: none;
+}
+
+#header li {
+    margin:0 ;
+    padding: 0;
+    list-style-type: none;
+}
+
+#header #nav{
+    margin: 0 0 18px 0;
+    padding: 0;
+    padding-left: 0;
+    height: 28px;
+    clear: left;
+    border-top: 1px solid #cbcbcb;
+    border-bottom: 1px solid #cbcbcb;  
+    font-family: 'Trade Gothic W01 Bold 2',Arial, Helvetica, Verdana, sans-serif;
+    font-weight: normal;    
+}
+
+#header ul.nav li a#home-nav{
+    width: 30px;
+    height: 28px;
+    background: url("../images/framework/2.0/icon-home.png") no-repeat top left;
+    margin: 0 0 0 24px; 
+    padding: 0;
+    border: none;
+}
+
+#header ul.nav {
+    list-style-type: none;
+    margin: 0; 
+    padding: 0;
+    padding-left: 0;
+}
+
+#header ul.nav,
+#header ul.nav li{
+    margin: 0; 
+    padding: 0;
+    float: left;
+}
+
+#header ul.nav li a{
+    display: block;
+    float: left;
+    margin: 0 1px 0 0;
+    padding: 7px 10px 10px 10px;
+    color: #000000;
+    font-size: 14px;
+    line-height: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+#header ul.nav li a:hover{
+	text-decoration:underline;	
+}
+
+#header ul.nav li a.on{
+    background: #a41034;
+    color: #ffffff;
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+    padding: 6px 10px 6px 10px; 
+}
+
+#header .ancillary-nav{
+    font-weight: bold;
+    position: absolute;
+    right: 13px;
+    top: 30px;
+} 
+
+#header .ancillary-nav a,
+#header .ancillary-nav .label{
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+#header .ancillary-nav a{
+    color: #a41034;
+}
+
+#header .ancillary-nav .label{
+    color: #000000;
+}
+
+
+/* Addtional Width Adjustments - Intended visible width is 984px */
+#header,
+#content-wrap{
+    width: 960px;
+}
+
+/*================================================================================
+
+Site Content
+
+----------------------------------------------------------------------------------*/
+
+#content-wrap {
+    width: 960px;
+    margin: 0 auto;
+    clear: left;
+    padding-bottom: 50px;
+}
+
+
+
+/* PDF conventions */
+
+.pdf{
+	position: static;	
+}
+
+#pdfHover {
+	position: absolute;	
+	width: 50px;
+	display:inline;
+	top: -50px;
+	left: -50px;	
+	z-index: 1000;
+}
+
+#pdfHover .pdf-text{
+	background-color: black;
+	color: white;
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 3px 5px 3px 10px;
+	position: absolute;
+	width: 30px;
+	font-size: 14px;
+	line-height: 1.5;
+	font-family: 'Trade Gothic W01 Roman';
+	font-weight: normal;
+}
+
+#pdfHover .arrow-down {
+	width: 0; 
+	height: 0; 
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+	border-top: 8px solid #000;
+	top: 25px;
+	position: absolute;
+	margin-left: 13px;
+}

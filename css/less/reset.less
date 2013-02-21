@@ -1,0 +1,142 @@
+
+/*================================================================================
+
+Reset taken from
+http://developer.yahoo.com/yui/reset/
+
+----------------------------------------------------------------------------------*/
+
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
+	margin:0;
+	padding:0;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+fieldset,img { 
+	border:0;
+}
+address,caption,cite,code,dfn,th,var {
+	font-style:normal;
+	font-weight:normal;
+}
+ol,ul {
+	list-style:none;
+}
+caption,th {
+	text-align:left;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-size:100%;
+	font-weight:normal;
+}
+q:before,q:after {
+	content:'';
+}
+abbr,acronym { 
+    border:0;
+}
+
+/* make sure these are set back */
+
+body {
+    font: normal 62.5% Verdana, Arial, sans-serif; 
+    position:relative;
+    background-color: #ffffff; 
+}
+
+
+h1,h2,h3,h4,h5,h6 {
+	font-weight:bold; 
+}
+
+ol,ul,dl {
+	margin-left:2em;
+}
+
+ol li {
+	list-style: decimal outside;	
+}
+
+ul li {
+	list-style: disc outside;
+}
+th {
+	font-weight:bold;
+	text-align:center;
+}
+caption {
+	margin-bottom:.5em;
+	text-align:center;
+}
+abbr,acronym {
+	border-bottom:1px dotted #000;
+	cursor:help;
+}
+input[type="button"], input[type="submit"], input[type="reset"] , button {
+    padding: 1px 6px;
+}
+
+/* Subnav and sidebar list bullets removed */
+#subnav ul li,
+#sidebar ul li{list-style: none;}
+
+/*================================================================================
+
+Sharepoint Reset
+
+----------------------------------------------------------------------------------*/
+
+.ms-WPBody,
+.ms-WPBody td {
+   font-size: inherit;
+   font-family: inherit;
+}
+
+html .ms-rte-wpbox {
+   color: inherit;
+   font-size:inherit;
+   line-height:inherit;
+}
+
+.s4-wpTopTable > tbody > tr > td {
+   padding: 0;
+}
+
+#RibbonContainer-TabRowRight,
+#s4-statusbarcontainer { font-size: 11px;}
+
+#pageStatusBar {z-index: 1000;}
+
+#DeveloperDashboard td,
+#DeveloperDashboard ul,
+#DeveloperDashboard li {
+   margin-top: 0;
+   margin-bottom: 0;
+   padding-top: 0;
+   padding-bottom: 0;
+}
+
+li.ms-MenuUIULItem {
+   list-style-type: none;
+   display: block;
+}
+
+#s4-statusbarcontainer {
+   position: relative;
+}
+#pageStatusBar {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+}
+.item {
+   padding: 0;
+   clear: none;
+}
+.ms-rtestate-write {
+   outline: 1px dashed #333;
+}

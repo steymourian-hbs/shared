@@ -1,0 +1,308 @@
+
+/*================================================================================
+
+Universal Supernav
+
+----------------------------------------------------------------------------------*/
+
+#supernav {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+}
+
+#supernav a {
+    text-transform: uppercase;
+}
+
+#supernav li {
+    margin:0 ;
+    padding: 0;
+    list-style-type: none;
+}
+
+#supernav .header h1.text-head a{
+    position: static;
+    padding: 17px 0 0 74px;
+    color: #aaa;
+    font-size: 40px;
+    height: 50px;
+    text-indent: 1px;
+    text-transform: uppercase;
+    width: 600px;
+    font-family: Arial, Helvetica, Verdana, sans-serif; 
+    /* Avail: Trade Gothic W01 Bold 2, Trade Gothic W01 Roman, TradeGothicW02-BoldCn20 */ 
+    font-weight: bold;
+}
+
+#supernav .main-sites ul li a{
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+}
+
+#supernav .toplinks{
+    background: #f0f0f0;
+    height: 25px; 
+    font-size: 10px;
+    width: 100%;
+}
+
+#supernav .toplinks .wrap{
+    clear: both; 
+    margin: 0 auto;    
+    position: relative;
+}
+
+#supernav .toplinks ul{
+    float: left;
+    list-style-type: none;
+    margin: 0 0 0 6px; /* bumped right for 11px distance to left edge of shield */
+    padding: 2px 0 0 0;
+    width: 310px;
+}
+
+#supernav .toplinks ul li{
+    display: inline;
+}
+
+#supernav .toplinks ul li a{
+    color: #787878;
+    display: block;
+    float: left;
+    letter-spacing: 0.05%;
+    margin: 0 10px 0 0;
+    padding: 5px 4px 2px 4px;   
+}
+
+#supernav .toplinks ul li a#supernav-sitemap{
+    margin: 0 9px 0 0;  
+}
+
+
+#supernav .toplinks{
+    font-size: 10px;
+}
+
+#supernav .toplinks ul li a.on{
+    color: #a41034;
+    font-family: Arial, Helvetica, Verdana, sans-serif;    
+}
+
+#supernav .toplinks .search-site{  
+    position: absolute;
+    right: 1px;
+    top: 0;
+    height: 25px;
+}
+
+#supernav .toplinks .search-site fieldset #search_submit {
+    border: none;
+    width: 31px;
+    height: 25px;
+    background: @hbsred;
+    background-image: ~"url('../images/framework/3.0/framework.png')";
+    background-position: -40px -140px;
+    font-size: 0;
+    line-height:75px;
+    cursor: pointer;
+    margin-right: -1px;
+    float: left;
+    -webkit-border-radius:0; 
+    border-radius:0;
+}
+
+#supernav .toplinks .search-site fieldset span.box-border {
+    display: block;
+    background: #fff;
+    border: 1px solid #989898;
+    padding: 1px;
+    float: left;
+}
+
+#supernav .toplinks .search-site fieldset.input #search_text {
+    width: 210px; 
+    height: 15px;
+    margin:0;
+    background: #fff;
+    border: 1px solid #989898;
+    font-family: Arial,sans-serif;
+    color: #787878;
+    font-size: 10px;
+    padding: 1px;
+    float: left;
+    padding: 2px 2px 2px 5px;  
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+}
+
+#supernav .main-bar{
+    background: #000;
+    color: #fff;
+    height: 64px;  
+    overflow: visible;  
+}
+
+#supernav .school-banner{
+    height: 64px;   
+    margin: 0 auto; 
+    overflow: visible;
+    position: relative;
+}
+
+#supernav .school-banner .hbs-logo,
+#supernav .school-banner .hbs-logo a{
+    display: block;
+    height: 69px;
+    width: 480px;
+}
+
+#supernav .school-banner .hbs-logo{
+    background-image: ~"url('../images/framework/3.0/framework.png')";
+    background-position: 0px -315px;
+    position: absolute;
+    top: 13px;
+    left: 0;
+}
+
+#supernav .main-sites{
+    height: 50px;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 27px;
+    width: 500px; 
+}
+
+#supernav .main-sites ul{
+    list-style-type: none;
+    margin: 0; 
+    padding: 0; 
+    text-align: right;
+}
+
+#supernav .main-sites ul li{
+    display: inline; 
+}
+
+#supernav .main-sites ul li a{
+    color: #A1A1A1;
+    display: inline; 
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 10px;
+    font-weight: normal;
+    letter-spacing: 0.06%;
+    line-height: 100%;
+    margin:  0 1px 0 0;
+    padding: 13px 6px 3px 6px; /* need 6px padding on sides for on-states */
+}
+
+#supernav .main-sites ul li.nav-about-us a{
+    margin-right: 3px;
+}
+
+#supernav .main-sites ul li a.on{
+    background: url("../images/framework/2.0/main-sites-on.png") repeat-x top left;
+}
+
+#supernav .main-sites ul li a:hover{
+    background: none;
+    text-decoration: underline;
+}
+
+#supernav .sitemap {
+     display: none;
+     //background: #dadada url("../images/framework/2.0/gradient-sitemap.png") repeat-x top left;  
+     background-color: #dadada;  
+}
+
+#supernav .shadow {
+     border-top: 1px solid #818181;
+     border-bottom: 1px solid #c5c5c5;
+}
+
+#supernav .shadow > div{
+     border-top: 1px solid #9a9a9a;
+     border-bottom: 1px solid #b2b2b2;
+}
+
+#supernav .sitemap .wrap {
+    width: 960px; /* override below */
+    margin: 0 auto;
+    padding: 18px 0 2px 0;
+    clear: both;
+}
+
+#supernav .sitemap .col1 {
+    width: 200px;
+    float: left;
+    margin-left: 20px;
+}
+
+#supernav .sitemap .col2 {
+    float: left;
+    width: 233px;
+}
+
+
+#supernav .sitemap .col3 {
+    float: left;
+    width: 295px;
+}
+
+#supernav .sitemap .col4 {
+    float: left;
+    width: 200px; 
+}
+
+#supernav .sitemap h4,
+#supernav .sitemap .close a{
+    color: #a41034;
+    font-family: 'Trade Gothic W01 Bold 2',Arial, Helvetica, Verdana, sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+#supernav .icon-square-close-red {
+    margin-right: 7px;
+    position: relative;
+    *position: static;
+    bottom: -3px;
+}
+
+#supernav .sitemap .close{
+    padding-top: 9px;
+}
+
+
+#supernav .sitemap .close a {
+    font-size: 11px;
+}
+
+#supernav .sitemap h4{
+    font-size: 11px;
+    margin: 0 0 10px; 
+}
+
+#supernav .sitemap ul{
+    margin: 0 0 23px 0;
+}
+
+#supernav .sitemap ul.last{
+    margin: 0 0 10px 0;
+}
+
+#supernav .sitemap li{
+    margin: 0 0 6px;
+}
+
+#supernav .sitemap a{
+    color: #363636;
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 12px;
+    text-transform: none;     
+}
+
+#supernav .toplinks .wrap,
+#supernav .school-banner,
+#supernav .toplinks .wrap,
+#supernav .sitemap .wrap{
+    width: 984px;
+}

@@ -1,0 +1,659 @@
+
+.component-framework {
+
+//------------------
+// Horizontal Rules
+//------------------
+
+.hr {
+   height: 1px;
+   background-color:#cccccc;
+}
+
+.hr2 {.hr;height: 2px;}
+.hr3 {.hr;height: 3px;}
+.hr4 {.hr;height: 4px;}
+.hr5 {.hr;height: 5px;}
+
+
+//------------------
+// Strokes
+//------------------
+
+.stroke2 {
+  border: 2px solid black;
+  display:inline-block;
+}
+
+.stroke3 {
+  border: 3px solid black;
+  display:inline-block;
+}
+
+a.stroke3:hover,
+a:hover .stroke3 {
+  border: 3px solid white;
+}
+
+.inherit-bg .stroke3 {
+  border-color: white;
+}
+
+.inherit-bg a.stroke3:hover,
+.inherit-bg a:hover .stroke3 {
+  border-color: black;
+}
+
+.white-stroke2 {
+  .stroke2; border-color: white;
+}
+.white-stroke3 {
+  .stroke3; border-color: white;
+}
+
+
+//------------------
+// Event Thumbnail
+//------------------
+
+.event-thumbnail  {
+    border: 3px solid black;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+   .color-framework .white; 
+   .color-framework .black-bg;
+   .type-framework .lambda-uc;
+} 
+
+.event-thumbnail span {
+    .color-framework .teal-bg;
+    display: block;
+    font-size: 32px;
+    line-height: 48px;
+} 
+
+.event-thumbnail.tbd span {
+    background-color:#878787;
+}
+
+.tile:hover .event-thumbnail span,
+a.event-thumbnail:hover span{
+   .color-framework .steelblue-bg;
+}  
+
+
+/*------------------
+  Buttons
+  1. http://forrst.com/posts/Make_font_face_and_button_behave_nicely_toget-hTH
+  ------------------*/
+
+.btn {
+  background-color: black;
+  color: white;
+  display: inline-block;
+  padding: 8px 17px; 
+  border: 0;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  -webkit-font-smoothing: antialiased; //1
+  .transition(background 0.1s linear);
+  
+  // mozilla is off by 2 pixels
+  &::-moz-focus-inner {
+     padding: 2px !important;
+     border: 0 none !important;
+  }
+   
+}
+
+.btn.teal-bg {.color-framework .teal-bg}
+.btn.salmon-bg {.color-framework .salmon-bg}
+.btn.coral-bg {.color-framework .coral-bg}
+.btn.yellowgreen-bg {.color-framework .yellowgreen-bg}
+.btn.orange-bg {.color-framework .orange-bg}
+.btn.skyblue-bg {.color-framework .skyblue-bg}
+.btn.peach-bg {.color-framework .peach-bg}
+.btn.steelblue-bg {.color-framework .steelblue-bg}
+.btn.hbsred-bg {.color-framework .hbsred-bg}
+.btn.silver-bg {.color-framework .silver-bg}
+
+.btn.steelblue-bg:hover,
+.btn.peach-bg:hover,
+.btn.skyblue-bg:hover,
+.btn.orange-bg:hover,
+.btn.yellowgreen-bg:hover,
+.btn.coral-bg:hover,
+.btn.salmon-bg:hover,
+.btn.hbsred-bg:hover,
+.btn.silver-bg:hover,
+.btn.teal-bg:hover {.color-framework .ink-bg}
+
+
+.btn:hover {
+  background-color: @hbsred;
+  text-decoration: none;
+}
+
+/*
+ 1. http://forrst.com/posts/Make_font_face_and_button_behave_nicely_toget-hTH
+*/
+.btn-arrow {
+    position: relative;
+    color: white;
+    display:inline-block;
+    border: 0;
+    line-height:32px;
+    padding: 0 17px;
+    cursor: pointer;
+    margin-right: 10px;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    -webkit-font-smoothing: antialiased; //1
+   .transition(background 0.1s linear);
+}
+
+
+.btn-left > span,
+.btn-right > span,
+.btn-arrow .left,
+.btn-arrow .right {
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-width: 16px;
+    top: 50%;
+    margin-top: -16px;
+   .transition(border-color 0.1s linear);
+}
+
+.btn-arrow:hover {
+  text-decoration: none;
+}
+
+
+.btn-right > span,
+.btn-arrow .right {
+    left: 100%;
+}
+
+.btn-left > span,
+.btn-arrow .left {
+    right: 100%;
+}
+
+// default colors
+
+.btn-arrow {    background: black;}
+.btn-arrow:hover, .btn-arrow.hover {    background: @hbsred; }
+.btn-arrow .right, .btn-right > span {    border-left-color: black;}
+.btn-arrow .left, .btn-left > span {    border-right-color: black;}
+.btn-arrow:hover .right, .btn-arrow.hover .right,
+.btn-right:hover > span, btn-right.hover > span { border-left-color: @hbsred;}
+.btn-arrow:hover .left, .btn-arrow.hover .left,
+.btn-left:hover > span, btn-left.hover > span { border-right-color: @hbsred;}
+
+// teal
+.btn-arrow.teal-bg {    background: @teal;}
+.btn-arrow.teal-bg .right {    border-left-color: @teal;}
+.btn-arrow.teal-bg .left {    border-right-color: @teal;}
+.btn-arrow.teal-bg:hover .left,.btn-arrow.teal-bg.hover .left {    border-right-color: black;}
+.btn-arrow.teal-bg:hover .right,.btn-arrow.teal-bg.hover .right {    border-left-color: black;}
+.btn-arrow.teal-bg:hover, .btn-arrow.teal-bg.hover{    background: black; }
+
+// hbsred
+.btn-arrow.hbsred-bg {    background: @hbsred;}
+.btn-arrow.hbsred-bg .right {    border-left-color: @hbsred;}
+.btn-arrow.hbsred-bg .left {    border-right-color: @hbsred;}
+.btn-arrow.hbsred-bg:hover .left,.btn-arrow.hbsred-bg.hover .left {    border-right-color: black;}
+.btn-arrow.hbsred-bg:hover .right,.btn-arrow.hbsred-bg.hover .right {    border-left-color: black;}
+.btn-arrow.hbsred-bg:hover, .btn-arrow.hbsred-bg.hover{    background: black; }
+
+.btn.btn-white-bg-onhover:hover, .btn-arrow.btn-white-bg-onhover:hover { background: white; color: black;}
+.btn-white-bg-onhover.btn-right:hover > span, .btn-white-bg-onhover.btn-right.hover > span, 
+.btn-white-bg-onhover:hover > .right, .btn-white-bg-onhover.hover > .right, 
+{ border-left-color: white;}
+.btn-white-bg-onhover.btn-left:hover > span, .btn-white-bg-onhover.btn-left.hover > span,
+.btn-arrow.btn-white-bg-onhover:hover .left, .btn-arrow.btn-white-bg-onhover.hover .left, 
+{ border-right-color: white}
+
+.txt-arrow{
+ font-family: "Lucida Grande", "Lucida xConsole", "Lucida Sans", Arial, sans-serif;
+}
+
+.btn-large {
+    font-size: 23px;
+    line-height: 38px;
+    padding: 5px 20px;
+} 
+
+.btn-large.btn-right {
+    padding-right: 12px;
+}
+.btn-large.btn-left {
+    padding-left: 12px;
+}
+
+.btn-large.btn-right > span,
+.btn-large.btn-left > span {
+    border-width: 24px;
+    margin-top: -24px;
+}
+
+
+
+//------------------
+// UL Styles
+//------------------
+  
+
+.ol-outset ol,
+.ul-outset ul,
+ol.outset,
+ul.outset {
+   margin-left: 0;
+   *margin-left: 1em;
+}
+
+.ol-outset ol li,
+.ul-outset ul li,
+ol.outset li,
+ul.outset li{
+   margin-bottom: 24px;
+   list-style-type: none;
+   *list-style-type: disc;
+}
+
+.ol-outset ol li:before,
+.ul-outset ul li:before,
+ol.outset li:before,
+ul.outset li:before {
+   content:"";
+   float:left;
+   width:7px;
+   height:6px;
+   margin:9px 0 0 -15px;
+   background-image: ~"url('../images/framework/3.0/framework.png')";
+   background-position: 0 -100px;
+}
+
+.ol-outset ol ol,
+.ol-outset ol ul,
+.ul-outset ul ul,
+.ul-outset ul ol {
+   margin-left: 2em;
+}
+
+.linear {
+  margin: 0;
+  padding: 0;
+}
+
+.linear > li {
+  display: inline;
+  margin-right: 5px;
+  list-style-type: none;
+}
+
+.ol-unbulleted ol,
+.ul-unbulleted ul,
+ul.unbulleted{
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+}
+
+ul.unbulleted li{
+   list-style-type: none;
+   margin-bottom: 8px;
+}
+
+ul.unbulleted li:before{
+   background-image: none;
+}
+
+// unstyled
+
+.ol-unstyled ol,
+.ul-unstyled ul,
+ul.unstyled{
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+}
+
+ul.unstyled li{
+   list-style-type: none;
+   margin-bottom: 0;
+}
+
+ul.unstyled li:before{
+   background-image: none;
+}
+
+
+//-----------------
+// DL Styles
+//-----------------
+
+
+dl.plusminus {
+    margin: 0; 
+    padding: 0; 
+} 
+
+dl.plusminus dt {
+    margin-bottom: 14px;
+}
+
+dl.plusminus dt.open {
+    text-decoration: none;
+    .type-framework .kappa;
+    //margin-bottom: 0;
+}
+
+dl.plusminus dt .minus { display: none;}
+dl.plusminus dt .plus {letter-spacing:5px;}
+dl.plusminus dt.open .minus { display: inline;letter-spacing:5px;}
+dl.plusminus dt.open .plus { display: none;}
+
+dl.plusminus dd {
+    margin-bottom: 14px;
+    top: -14px;
+    position: relative;
+} 
+
+dl.plusminus dt a:hover {
+    color: #9C1B35;
+} 
+
+dl.plusminus dt a {
+    color: #181818;
+    cursor: pointer;
+    text-decoration: underline;
+} 
+
+//-----------------
+// Dropdown Menus
+//-----------------
+
+.dropdown-container {
+   display: inline;
+   position: relative;
+   
+   .dropdown-menu2,
+   .dropdown-menu {
+      display: none;
+   }
+}
+
+.dropdown-container.active { 
+   .dropdown-menu {
+      display: block;
+      position: absolute;
+      top: -8px;
+      *top: 10px;
+      left: -1px;
+      z-index: 1001;
+   }
+   .dropdown-toggle {
+      visibility: hidden;
+   }
+   .dropdown-menu2 {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+   }
+   .dropdown-toggle2 {
+      display: none;
+   }
+}
+
+.dropdown-toggle {
+  border: 1px solid #333;
+  border: 1px solid rgba(0,0,0,.2);
+  padding: 5px 15px 4px 7px;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  [class*='icon-select'] {
+    position: relative;
+    bottom: -2px;
+    left: 10px;
+  }
+  [class*='icon-dropdown'] {
+    position: relative;
+    bottom: 0;
+    left: 10px;
+  }
+  [class*='icon-expand'] {
+    position: relative;
+    bottom: 0;
+    left: 10px;
+  }
+
+}
+
+.dropdown-menu {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  padding: 2px 3px;
+  min-width: 150px;
+  
+  > li {
+     list-style-type: none;
+     margin: 1px 0;
+  }
+  
+  a.active {
+     background-color: black !important;
+  }
+  > li a {
+     display: block;
+     padding: 4px;
+     white-space: nowrap;
+  }
+
+  > li a:hover {
+     text-decoration: none;
+  }
+
+  > li.divider {
+     padding: 0;
+     margin: 0;
+     height: 1px;
+     font-size: 1px;
+     min-width: 150px;
+  }
+}
+
+//-----------------
+// Dropdown Menus 2
+//-----------------
+
+
+.dropdown-container2 {
+   display: block;
+   position: relative;
+   
+   .dropdown-menu2 {
+      display: none;
+   }
+}
+
+.dropdown-container2.active { 
+   .dropdown-menu2 {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+   }
+}
+
+.dropdown-toggle2 {
+   padding: 9px 8px 9px 12px;
+   display: block;
+   
+   &:hover {
+      text-decoration: none;
+   }
+   
+   [class*='icon'] {
+      float: right;
+      position: relative;
+      bottom: -2px;
+      left: 0;
+  }
+   
+}
+
+.dropdown-menu2 {
+  .dropdown-menu;
+  padding: 2px 4px;
+  
+  > li {
+     margin: 0;
+     padding: 1px 0;
+  }
+  > li a {
+     display: block;
+     padding: 6px 8px;
+     white-space: nowrap;
+  }
+
+}
+
+//------------------
+// Toggle Container
+//------------------  
+
+.toggle-container .toggle-show {
+   display: none;
+}
+
+//------------------
+// AZ List
+//------------------  
+ .az-list {
+      float: left;
+ } 
+ .az-list a{
+      min-width: 16px; height: 12px; 
+      display: block; float: left; 
+      padding: 6px 6px 10px 6px; 
+      margin: 0 5px 0 0;
+      text-align: center;
+      background: #cecece;
+      .type-framework .mu-uc;
+      .color-framework .ink;
+      .transition(background-color 0.1s linear);
+ }
+
+ .az-list a.active{
+      background: black;
+      color: white;
+ }
+ 
+ .az-list a.disabled{
+      background: #f0f0f0;
+      color: #b6b6b6;
+ }  
+ .az-list a:hover{
+    color: white;
+    background-color: #9C1B35;
+    text-decoration: none;
+ }
+ .az-list a.disabled:hover{
+    color: #B6B6B6;
+    text-decoration: none;
+    background-color: #F0F0F0;
+    cursor: default;
+ }
+ 
+          
+//------------------
+// More
+//------------------     
+   
+.more{
+      .type-framework .mu;
+ }
+.more a{
+       text-decoration: underline;
+       .color-framework .ink;
+ }
+.more a:hover{
+       text-decoration: none
+ }
+ 
+//------------------
+// Back to top action
+//------------------   
+
+.back-to-top {
+      position:fixed;
+      bottom:50px;
+      right:100px;
+      display:none; 
+      z-index: 1000;  
+      .transition(opacity .3s linear);  
+      
+      a { outline: none; }
+}
+
+.back-to-top.active {
+      display: block;
+      .opacity(.3);
+}
+
+.back-to-top.no-opacity-support {
+      .icon-back-to-top {
+          background-position: -71px -220px;
+      }
+}
+
+.back-to-top:hover{
+    .opacity(3); 
+}
+
+//------------------
+// Carousels
+//------------------   
+
+.carousel-container {
+   overflow: hidden;
+
+   .carousel-panels {
+      //float: left;
+      width: 100000px;
+      position: relative;
+      .clearfix();
+      
+      li {
+        float: left;
+        
+        // the bottom margin on a p doubles-up when the li floats
+        > *:last-child {
+           margin-bottom: 0;
+        }
+        
+      }
+      
+   }
+}
+
+
+// end component-framework
+}
+
+

@@ -1,0 +1,65 @@
+<h1><a class="black section" name="tabs">tabs</a></h1>
+<p>The tabs module activates page tabs</p>
+
+<div class="row">
+<div class="span6">
+<h5>html markup</h5>
+<textarea class="prettyprint">
+<ul class="nav-tabs">
+    <li><a href="#one">Fall 2012</a></li>
+    <li><a href="#two">Winter 2012</a></li>
+    <li><a href="#three">Fall 2013</a></li>
+</ul>
+<p id="one">Fall 2012 Content</p>
+<p id="two">Winter 2012 Content</p>
+<p id="three">Winter 2012 Content</p>
+</textarea>
+</div>
+<div class="span6 js-framework orange-inherit">
+<h5>results</h5>
+    <ul class="nav-tabs">
+        <li><a href="#one">Fall 2012</a></li>
+        <li><a href="#two">Winter 2012</a></li>
+        <li><a href="#three">Fall 2013</a></li>
+    </ul>
+    <p id="one">Fall 2012 Content</p>
+    <p id="two">Winter 2012 Content</p>
+    <p id="three">Fall 2013 Content</p>
+</div>
+</div>
+
+<!--
+
+TEST CASES
+
+Click on the first and second tab of the first .nav-tabs, 
+and confirm visibility of elements.
+
+-->
+<script type="text/javascript">
+require(['domready!'],function(){
+
+   test("tabs", function() {
+     var t = $(".nav-tabs").eq(0);
+     var first = $("a",t).eq(0);
+     var firstp = t.next();
+     var second = $("a",t).eq(1);
+     var secondp = firstp.next();
+     first.click();
+     ok(first.hasClass('inherit-bg'),'first tab is selected');
+     ok(!second.hasClass('inherit-bg'),'second tab is not selected');
+     ok(firstp.is(':visible'),'first p is visible');
+     ok(!secondp.is(':visible'),'second p is not visible');
+     second.click();
+     ok(!first.hasClass('inherit-bg'),'first tab is not selected');
+     ok(second.hasClass('inherit-bg'),'second tab is selected');
+     ok(!firstp.is(':visible'),'first p is not visible');
+     ok(secondp.is(':visible'),'second p is visible');
+     first.click();
+   });
+     
+});
+</script>
+
+
+

@@ -1,0 +1,69 @@
+<h1><a class="black section" name="carousel">carousel</a></h1>
+<p>The carousel module activates page carousels</p>
+
+<div class="row">
+<div class="span6">
+<h5>html markup</h5>
+<textarea class="prettyprint">
+<div class="carousel-container">
+    <ul class="carousel-panels">
+        <li>Fall 2012 Content</li>
+        <li>Winter 2012 Content</li>
+        <li>Fall 2013 Content</li>
+        <li>Winter 2014 Content</li>
+        <li>Fall 2014 Content</li>
+    </ul>
+    <div class="carousel-nav"></div>
+</div>
+</textarea>
+</div>
+<div class="span6 js-framework orange-inherit">
+<h5>results</h5>
+
+    <div class="carousel-container">
+
+        <ul class="carousel-panels">
+            <li>Fall 2012 Content</li>
+            <li>Winter 2012 Content</li>
+            <li>Fall 2013 Content</li>
+            <li>Winter 2014 Content</li>
+            <li>Fall 2014 Content</li>
+        </ul>
+
+        <div class="carousel-nav"></div>
+        
+    </div>
+
+
+</div>
+</div>
+
+<!--
+
+TEST CASES
+
+
+-->
+<script type="text/javascript">
+require(['domready!'],function(){
+
+   test("carousel", function() {
+     var t = $(".carousel-container").eq(0);
+     var first = $(".carousel-nav .dot a",t).eq(0);
+     var firstp = $(".carousel-panels > li",t).eq(0);
+     var second = $(".carousel-nav .dot a",t).eq(1);
+     var secondp = firstp.next();
+     first.click();
+     ok(first.parent().hasClass('active'),'first panel is selected');
+     ok(!second.parent().hasClass('active'),'second panel is not selected');
+     second.click();
+     ok(!first.parent().hasClass('active'),'first panel is not selected');
+     ok(second.parent().hasClass('active'),'second panel is selected');
+     first.click();
+   });
+     
+});
+</script>
+
+
+

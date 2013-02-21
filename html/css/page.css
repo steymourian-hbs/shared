@@ -1,0 +1,110 @@
+/* CSS RESET */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+strong {
+	font-weight:bold;
+}
+
+i {
+	font-style:italic;
+}
+.clearme:before, .clearme:after { content: ""; display: table; }
+.clearme:after { clear: both; }
+.clearme { zoom: 1; }
+
+/* banner */
+#header h1 {height: 48px; background-image: url("/doctoral/images/site/head-doctoral.png");margin-top: 26px; margin-bottom: 5px;}
+
+/* body content */
+body {
+	font-family: "verdana", sans-serif;
+	font-size:11px;
+	color:#222;
+}
+p {
+	line-height:1.5em;
+}
+a {
+	color:#0a5ca6;
+}
+hr {
+	border:none;
+	background: url("../images/site/bar.png") 50% 50% repeat-x;
+	line-height:1em;
+	margin:15px 0;
+	clear:both;
+}
+dt {
+	cursor:pointer;
+}
+.bolded {
+	font-weight:bold;
+}
+#content h2 {
+	padding:15px 0 15px 0;
+	font-family: 'Trade Gothic W01 Bold 2',Arial,Helvetica,Verdana,sans-serif;
+	text-transform:uppercase;
+	letter-spacing:2px;
+	font-size:19px;
+	color:#993333;
+}
+#content h3 {
+	font-size:15px;
+	font-weight:bold;
+	margin:20px 0 10px 0;
+}
+#content h4 {
+	font-size:12px;
+	font-weight:bold;
+	margin:20px 0 10px 0;
+}
+#content ul {
+	margin: 0 0 10px 30px;
+	line-height:1.4em;
+}
+#content ol {
+	margin: 10px 0 10px 70px;
+}
+#content li {
+	padding: 5px 0;
+}
+#content p {
+	margin:5px 0 0 0;
+}
+
+
+
+
+

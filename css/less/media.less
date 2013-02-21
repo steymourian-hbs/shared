@@ -1,0 +1,142 @@
+
+
+
+//------------------
+// Media
+//------------------  
+ 
+.media {
+   list-style-type: none;   
+   background-image:none;
+   margin: 0;
+   //background-color: rgba(255,200,200,.1);
+   
+   &:before,
+   .linear li:before {
+      background-image: none !important;
+   }
+   
+   .mu-uc {
+      padding-top: 2px;
+   }
+   
+   .gamma, .gamma-uc {
+      margin-top: 9px;
+      margin-bottom: 8px;
+   }
+
+   .theta, .theta-uc {
+      margin-top: 5px;
+   }
+   
+   .eta, .eta-uc {
+      margin-top: 5px;
+      margin-bottom: 4px;
+   }
+   
+   .kappa, .kappa-uc {
+      margin-top: 3px;
+      margin-bottom: 6px;
+   }
+   
+   .paragraph {
+      margin-top: 3px;
+   }
+   
+   .event-thumbnail {
+      position: relative;
+      top: -8px;
+      margin-bottom: 8px;
+   }
+   
+}
+
+
+
+
+//------------------
+// Media Lists
+//
+//   - ordered next to overwrite the media definitions above
+//
+//------------------  
+
+.media-list-base() {
+   margin-left: 0;
+   padding-left: 0;
+   list-style: none;
+   margin-bottom: 24px;
+}
+
+// sp fix
+.s4-wpTopTable .media-list3,
+.s4-wpTopTable .media-list4 {
+   margin-bottom: 0;
+}
+
+.media-list3 {
+   .media-list-base();
+   
+   .media {
+      margin-bottom: 19px;
+   }
+}
+
+.media-list4,
+.media-list5,
+.media-list6 {
+   .media-list-base();
+   
+   .media {
+      margin-bottom: 19px;
+   }
+   
+   p { 
+      margin-top: 20px;
+   }
+}
+
+.media-list7,
+.media-list8,
+.media-list9 {
+   .media-list-base();
+   p {
+      margin-top: 10px;
+   }
+   
+   .eta {
+      margin-top: 5px;
+   }
+   
+   .kappa {
+      margin-top: 11px;
+   }
+   
+   .media {
+      margin-bottom: 35px;
+   }
+   
+}
+
+
+//------------------
+// Media List Dividers
+//
+//   - adds separation between the media list items
+//
+//------------------  
+
+.media-list-dividers {
+   border-top: 1px solid #ccc;
+   
+   .media {
+      padding-bottom: 20px;
+      padding-top: 17px;
+      border-bottom: 1px solid #CCC;
+      margin-bottom: 0;
+   }
+}
+
+
+
+ 

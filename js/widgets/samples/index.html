@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Standard Page - Harvard Business School</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<!--#include file="/shared/js/widgets/samples/includes/head.html"-->
+
+</head>
+<body>
+
+		<!--#include file="/shared/js/widgets/samples/includes/header.html"-->
+
+        <div id="content"><div class="inner">
+
+
+
+
+
+
+    <div id="content"><div class="inner">
+
+
+
+
+
+
+<script type="text/javascript">
+
+jQuery(function(){
+
+});
+</script>
+
+<h2>Sharebar Samples</h2>
+
+<div class="sampleblock">
+    <h3>Default: Widgets.ShareBar.create()</h3>
+    <br/>
+    <textarea>
+        $(".sharebar").each(function(){
+          var bar = Widgets.ShareBar.create();
+          $(this).append(bar);
+        });
+    </textarea>
+    <div class="sharebar"></div>
+</div>
+
+
+<div class="sampleblock">
+	<h3>Default with NO borders</h3>
+    <br/>
+     <textarea>
+     $(".sharebar-noborders").each(function(){
+	  var options = {showDottedBorders: false};
+      var bar = Widgets.ShareBar.create(options);
+      $(this).append(bar);
+    })     
+     </textarea>
+	<div class="sharebar-noborders"></div>
+</div>
+
+<div class="sampleblock">
+    <h3>With commentCount option: </h3>
+     <br/>
+     <textarea>
+    $(".sharebar-comments").each(function(){
+      var options = {comment: true, commentCount:10}
+      var bar = Widgets.ShareBar.create(options);
+      $(this).append(bar);
+    });     
+     </textarea>
+    <div class="sharebar-comments"></div>
+</div>
+
+<div class="sampleblock">
+    <h3>Show/hide certain items</h3>
+    <br/>
+     <textarea>
+        $(".sharebar-hidesome").each(function(){
+            var options = {comment: false, print:false, email:true, sharethis:true, fbrecommend:true}
+            var bar = Widgets.ShareBar.create(options);
+            $(this).append(bar);
+        });     
+     </textarea>    
+    <div class="sharebar-hidesome"></div>
+</div>
+
+
+
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+
+
+
+        </div></div><!-- content -->
+
+        <div id="sidebar"><div class="inner"></div></div>
+
+    </div><!-- #content-wrap -->
+
+<!--#include virtual="/shared/ssi/common.footer.html"-->
+
+</div><!-- #container -->
+<!-- END Standard Footer -->
+</body>
+</html>

@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+<title>Framework XSL</title>
+<script type="text/javascript" src="/shared/js/jeff/framework.js"></script>
+<!--#include virtual="ssi/head.html"-->
+<style type="text/css">
+h1,.hr4 {margin: 24px 0 16px 0;}
+h5{ margin: 16px 0 8px 0;}
+#xsl-nav {color: white;}
+</style>
+<body>
+<!--#include virtual="/shared/ssi/universal.header.html"-->
+<div class="type-framework color-framework grid-framework component-framework pattern-framework">
+<!--#include virtual="ssi/header.html"-->
+<div class="teal-bg">
+<div class="container site-header">
+<div class="delta white">XSLQuery</div>
+<p class="theta">Functions used in the Sharepoint WCM XSL environment.  <br/>View the full set of <a href="https://devscm.hbs.edu/sharepoint/SchoolWide/SharePointInternet/WCM2010/Research/hbs.internet.XslQuery2/TestSuite/testrunner.xsl">test cases.</a></p>
+</div>
+</div>
+
+<div class="container">
+<div id="table-of-contents"></div>
+<div class="hr4"></div>
+</div>
+
+<div class="container h1-gamma h5-kappa">
+
+<!-- =================================================
+
+Starter
+
+================================================= -->
+
+<h1><a class="black section" name="hello">Starter XSL</a></h1>
+<p>Below is a starter template for your xsl file.</p>
+<textarea class="prettyprint">
+<?xml version="1.0" encoding="utf-8"?>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0" xmlns:hbs="urn:hbs"
+   xmlns:z="#RowsetSchema" xmlns:msxsl="urn:schemas-microsoft-com:xslt"
+   exclude-result-prefixes="hbs z msxsl">
+
+    <!--<xsl:import href="lib/queries.xsl"/>-->
+    <xsl:param name="args"/> 
+    <xsl:output method="html" omit-xml-declaration="yes"/>
+    <!--
+    
+    Query Data
+    
+    -->
+    <xsl:template match="/Root">
+        <Render>
+            <xsl:if test="hbs:Request/debug='true'">
+                <hbs:Debug/>
+            </xsl:if>
+            <hbs:Repeat/>
+        </Render>
+    </xsl:template>
+    <!--
+    
+    Render Output
+    
+    -->
+    <xsl:template match="/Render">
+       <p>Hello World</p>
+    </xsl:template>
+</xsl:stylesheet>
+</textarea>
+
+<!-- / Starter -->
+
+
+<!-- =================================================
+
+SPQuery
+
+================================================= -->
+
+<h1><a class="black section" name="spquery">SPQuery</a> <span class="mu">v1</span></h1>
+<p>Query Sharepoint Lists</p>
+<div class="row">
+    <div class="span8">
+<textarea class="prettyprint">
+<hbs:SPQuery Name="query-keywords">
+    <Site Path="~SiteCollection" />
+    <List Name="Events" />
+    <Cache Key="hbs.CHANGEME.events" Minutes="20" CheckForListChanges="True" />
+    <View>
+        <Query>
+            <Where>
+                <Eq>
+                    <FieldRef Name="ViewStatus"/>
+                    <Value Type="Text">Active</Value>
+                </Eq>
+            </Where>
+            <OrderBy> 
+                <FieldRef Name="Date" Ascending="FALSE"/>
+            </OrderBy>
+        </Query>
+        <ViewFields>
+            <FieldRef Name="ID"/>
+            <FieldRef Name="Title"/>	
+            <FieldRef Name="EventType"/>
+        </ViewFields>
+        <RowLimit>1</RowLimit>
+    </View>
+</hbs:SPQuery>
+</textarea>
+    </div>
+    <div class="span4">
+    </div>
+</div> 
+
+<!-- / SPQuery -->
+
+<!-- =================================================
+
+SPSiteDataQuery
+
+================================================= -->
+
+<h1><a class="black section" name="spsitedataquery">SPSiteDataQuery</a> <span class="mu">v1</span></h1>
+<p>Recursively Query Sharepoint Lists</p>
+<div class="row">
+    <div class="span8">
+<textarea class="prettyprint">
+<hbs:SPSiteDataQuery>
+    <Site Path="."/>
+    <Webs Scope="SiteCollection"/>
+    <Lists BaseType="0"/>
+    <Where>
+        <Neq>
+            <FieldRef Name="_ModerationStatus" />
+            <Value Type="Number">0</Value>
+        </Neq>
+    </Where>
+    <RowLimit>500</RowLimit>
+    <OrderBy>
+        <FieldRef  Name="Modified" Ascending="FALSE" />
+    </OrderBy>
+    <FieldRef Name="ID"/>
+    <FieldRef Name="FileRef"/>
+    <FieldRef Name="Title"/>
+    <FieldRef Name="Editor"/>
+    <FieldRef Name="ContentType"/>
+    <FieldRef Name="Modified"/>
+    <FieldRef Name="_ModerationStatus"/>
+</hbs:SPSiteDataQuery>
+</textarea>
+    </div>
+    <div class="span4">
+    </div>
+</div> 
+
+<!-- / SPSiteDataQuery -->
+
+
+
+<!-- =================================================
+
+Redirect
+
+================================================= -->
+
+<h1><a class="black section" name="setredirect">SetRedirect</a> <span class="mu">v1</span></h1>
+<p>Redirect the user to a specific URL.  (Cannot be used in a /Render step)</p>
+<div class="row">
+    <div class="span8">
+<textarea class="prettyprint">
+<hbs:SetRedirect Url="http://www.hbs.edu" Status="301 Moved Permanently"/>
+</textarea>
+    </div>
+    <div class="span4">
+    </div>
+</div> 
+
+<!-- / Redirect -->
+
+
+<!-- =================================================
+
+GetRemote
+
+================================================= -->
+
+<h1><a class="black section" name="getremote">GetRemote</a> <span class="mu">v1</span></h1>
+<p>Get contents of a remote URL</p>
+<div class="row">
+    <div class="span8">
+<textarea class="prettyprint">
+<!-- Text Example -->
+<hbs:GetRemote>
+    <Cache Key="hbs.environment.sustainability" RecoverOnError="True" Minutes="30"/>
+    <Request Url="http://www.hbs.edu/" ResultType="Text">
+       <Header Name="Timeout" Value="3000"/>
+    </Request>
+</hbs:GetRemote>
+
+<!-- SOAP Example -->
+<hbs:GetRemote>
+    <Request Url="/_vti_bin/Webs.asmx" ResultType="Xml" Method="POST">
+      <Header Name="SOAP" Value="Action"/>
+      <Header Name="ContentType" Value="text/xml;charset=&quot;utf-8&quot;"/>
+      <Header Name="Accept" Value="text/xml"/>
+      <Body>
+        <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+          xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+          xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+          <soap:Body>
+            <GetWebCollection xmlns="http://schemas.microsoft.com/sharepoint/soap/" />
+          </soap:Body>
+        </soap:Envelope>
+      </Body>
+    </Request>
+</hbs:GetRemote>
+
+<!-- POST Example -->
+<hbs:GetRemote>
+    <Request Url="/test-post.aspx" ResultType="Xml" Method="POST">
+      <Param Name="type" Value="Cases"/>
+      <Param Name="limit" Value="10"/>
+    </Request>
+</hbs:GetRemote>
+
+
+
+</textarea>
+    </div>
+    <div class="span4">
+    </div>
+</div> 
+
+<!-- / GetRemote -->
+
+
+<!-- =================================================
+
+GetFeed
+
+================================================= -->
+
+<h1><a class="black section" name="GetFeed">GetFeed</a> <span class="mu">v2</span></h1>
+<p>Get contents of a remote feed</p>
+<div class="row">
+    <div class="span8">
+<textarea class="prettyprint">
+<hbs:GetFeed>
+    <Source Url="http://www.hbs.edu/news/rss/faculty-news-rss.xml" 
+        ID="faculty-in-the-news" ItemLimit="8">
+        <Cache Key="hbs.environment.feed" RecoverOnError="True" Minutes="200" />
+    </Source>
+    <Output>
+        <AutoSummary Length="600" StripTags="a|i|b|strong|em|p|div|span|hr" 
+            StripContents="table|object"/>
+    </Output>
+</hbs:GetFeed>
+</textarea>
+    </div>
+    <div class="span4">
+    </div>
+</div> 
+
+<!-- / GetRemote -->
+
+
+
+		
+
+
+
+
+
+<!-- =================================================
+
+SetControl
+
+================================================= -->
+
+<h1><a class="black section" name="setcontrol">SetControl</a></h1>
+<p>Set the value of a Literal Control on a layout page. (Cannot be used in a /Render step)</p>
+<div class="row">
+    <div class="span8">
+<textarea class="prettyprint">
+&lt;!-- on a layout page, insert this control --&gt;
+<asp:Literal ID="MyLiteral" runat="server"></asp:Literal>
+
+&lt;!-- in your XSL file, you can dynamically set its with the SetControl method --&gt;
+<hbs:SetControl Name="MyLiteral">Setting <b>MyLiteral</b></hbs:SetControl>
+</textarea>
+    </div>
+    <div class="span4">
+    </div>
+</div> 
+
+<!-- / SetControl -->
+
+
+<!-- =================================================
+
+Args
+
+================================================= -->
+
+<h1><a class="black section" name="args">Args</a></h1>
+<p>Pass arguments into the XSLQuery with the "Args" attribute</p>
+<div class="row">
+    <div class="span8">
+<textarea class="prettyprint">
+Add the webpart to the page
+
+<XslQuery:XslQueryWebPart2 Args="top4" ... ></XslQuery:XslQueryWebPart2>
+
+And import the pararam at the top of the XSL file
+
+<xsl:stylesheet>
+    <xsl:param name="args"/>
+</xsl:stylesheet>
+
+</textarea>
+    </div>
+    <div class="span4">
+    </div>
+</div> 
+
+<!-- / SetControl -->
+
+
+
+<!-- =================================================
+
+Functions
+
+================================================= -->
+
+<h1><a class="black section" name="ext">Extension Functions</a></h1>
+<div class="row">
+    <div class="span8">
+
+<h5><a class="black section" indent=".." name="Strings">String Manipulation</a></h5>
+<textarea class="prettyprint">
+# case manipulation 
+string hbs:ToLower(string s)
+string hbs:ToUpper(string s)
+string hbs:ToTitleCase(string s)
+</textarea>
+<textarea class="prettyprint">
+# URL-encodes a string and returns the encoded string.
+string hbs:UrlEncode(string s)
+</textarea>
+<textarea class="prettyprint">
+# URL-encodes the path section of a URL string and returns the encoded string.
+string hbs:UrlPathEncode(string s)
+</textarea>
+<textarea class="prettyprint">
+# Returns a new string in which all occurrences of a specified 
+# string in the current instance are replaced with another specified string.
+string hbs:Replace(string s, string oldValue, string newValue)
+string hbs:RegexReplace(string s, string pattern, string rxoptions, string newValue)
+</textarea>
+
+
+
+<textarea class="prettyprint">
+# Returns a new string in which all leading and/or trailing occurrences are removed
+string hbs:Trim(string s)
+string hbs:TrimEnd(string s, char trimChar)
+string hbs:TrimStart(string s, char trimChar)
+</textarea>
+<textarea class="prettyprint">
+# Determines if the beginning or end of this string instance matches a specified string.
+bool hbs:StartsWith(string s, string testString)
+bool hbs:EndsWith(string s, string testString)
+</textarea>
+<textarea class="prettyprint">
+# decodes &amp;amp; &amp;gt; &amp;lt; HTML-encoded strings
+string hbs:HtmlDecode(string s)
+</textarea>
+<textarea class="prettyprint">
+# decodes HTML-encoded strings except for the &amp;amp; &amp;gt; &amp;lt; &amp;quot; characters
+string hbs:SafeHtmlDecode(string s)
+</textarea>
+<textarea class="prettyprint">
+# HTML-encodes string
+string hbs:HtmlEncode(string s)
+</textarea>
+<textarea class="prettyprint">
+# Split string 
+# eg. hbs:Split('a|b|c','|') returns
+# <Item Val="a">
+# <Item Val="b">
+# <Item Val="c">
+xml hbs:Split(string s, string sep)
+xml hbs:Split(string s, string sep, string max)
+xml hbs:RegexSplit(string s,string pattern,string rxoption)
+
+# <xsl:for-each select="hbs:Split(@ows_TextArea,'\n')">
+#   <xsl:value-of select="@Val"/>
+# </xsl:for-each>
+</textarea>
+<textarea class="prettyprint">
+# Tests a regular expression
+# use 'i' in rxoptions for a case insensitive match
+string hbs:RegexIsMatch(string s,string pattern,string rxoption)
+</textarea>
+
+<h5><a class="black section" indent=".." name="Dates">Dates</a></h5>
+<textarea class="prettyprint">
+# Formats a date
+# for example
+# hbs:GetDate('2012','10','1','MMM dd yyyy') returns
+# <Date Year="2012" Month="10" Day="1" DayOfYear="232" Formatted="Oct 01 2012"/>
+xml hbs:GetDate(int year, int month, int day, string format)
+</textarea>
+<textarea class="prettyprint">
+# generates days between time periods
+# <Date Year="2012" Month="10" Day="1" DayOfYear="232" Formatted="Oct 01 2012"/>
+# <Date Year="2012" Month="10" Day="2" DayOfYear="233" Formatted="Oct 02 2012"/>
+# <Date Year="2012" Month="10" Day="3" DayOfYear="234" Formatted="Oct 03 2012"/>
+xml hbs:DateRange(int startYear, int startMonth, int startDay,
+                  int endYear, int endMonth, int endDay,
+                  int step,'days',string format)
+xml hbs:DateRange(int startYear, int startMonth, int startDay,
+                  int endYear, int endMonth, int endDay,
+                  int step,'months',string format)
+</textarea>
+
+<h5><a class="black section" indent=".." name="Util">Sharepoint Utilities</a></h5>
+<textarea class="prettyprint">
+# Tests if user is logged in
+bool hbs:UserIsAuthenticated()
+</textarea>
+<pre class="prettyprint">
+# Tests if user has permissions on the site eg. "ViewListItems|ApproveItems" 
+# http://msdn.microsoft.com/en-us/library/microsoft.sharepoint.spbasepermissions.aspx
+bool hbs:UserHasSitePermissions(string permset)
+</pre>
+<pre class="prettyprint">
+# Tests if user belongs to a SPGroup
+bool hbs:UserIsMemberOfGroup(string grpName)
+</pre>
+<textarea class="prettyprint">
+# Tests is a file exists 
+bool hbs:FileExists(sting path)
+</textarea>
+<textarea class="prettyprint">
+# Returns the contents of a file
+bool hbs:GetFileAsString(sting path)
+</textarea>
+<textarea class="prettyprint">
+# splits a choice field with value "a;#b;#c" into 
+#  <Item Val="a"/>
+#  <Item Val="b"/>
+#  <Item Val="c"/>
+xml hbs:hbs:Multivalue('choice',string field)
+
+# splits a choice field with value "1;#a;#2;#b;#3;#c" into 
+#  <Item ID="1" Val="a"/>
+#  <Item ID="2" Val="b"/>
+#  <Item ID="3" Val="c"/>
+#
+# eg. 
+# <ul>
+#   <xsl:for-each select="hbs:Multivalue('lookup',$row/@ows_RelatedTopics)">
+#     <li><xsl:value-of select="@ID"/> - <xsl:value-of select="@Val"/></li>
+#   </xsl:for-each>
+# </ul>
+
+xml hbs:hbs:Multivalue('lookup',string field)
+
+</textarea>
+
+
+
+
+<h5><a class="black section" indent=".." name="Misc">Misc Utilities</a></h5>
+<textarea class="prettyprint">
+# helper function to reduce verbose xsl:if statements
+string hbs:If(bool test, string thenThis, string elseThat)
+</textarea>
+<textarea class="prettyprint">
+# return random number between two values
+int hbs:Random(int min, int max)
+</textarea>
+<textarea class="prettyprint">
+# safe parser of xml &amp;lt;hello name=&amp;quot;world&amp;quot;/&amp;gt;
+#  <hello name="world" />
+xml hbs:TryParseXML(string xml)
+</textarea>
+<textarea class="prettyprint">
+# Generates an MD5 from an input string
+string hbs:MD5Hash(string input)
+</textarea>
+<textarea class="prettyprint">
+# returns an array of integers
+# for example hbs:IntRange(0, 4, 2) returns
+#  <Item Val="0" />
+#  <Item Val="2" />
+#  <Item Val="4" />
+xml hbs:IntRange(int start, int end, int step)
+</textarea>
+<textarea class="prettyprint">
+# starts a stopwatch to monitor performance
+string hbs:TimerStart(string timerName)
+string hbs:TimerEnd(string timerName)
+</textarea>
+<textarea class="prettyprint">
+# tests a sharepoint permission mask
+bool hbs:BitmaskHasBit(string hexValue, string hexTest)
+</textarea>
+
+    </div>
+    <div class="span4">
+    </div>
+</div> 
+
+<!-- / Extensions -->
+
+
+
+
+   
+</div>
+
+</div>
+<br/><br/>
+<br/><br/>
+<!--#include virtual="/shared/ssi/universal.footer.html"-->
+</body>
+</html>

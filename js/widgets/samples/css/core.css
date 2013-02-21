@@ -1,0 +1,519 @@
+/*
+// core.css - Sitewide CSS 
+//
+// $Author: jgriffith $
+// $Date: 2010-12-07 11:58:10 -0500 (Tue, 07 Dec 2010) $
+// $Revision: 111191 $
+*/
+
+html, body, p, div, h1, h2, h3, h4, h5, h6, form, input, fieldset, dl, dd, dt { margin:0; padding:0; }
+img, fieldset { border: none; }
+  
+
+body { 
+    font: normal 62.5% Verdana, Arial, sans-serif; 
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    color: black;
+}
+
+a { 
+     text-decoration: none; 
+     color: #336699; 
+} 
+
+a:hover { 
+     text-decoration: underline; 
+}
+
+a:visited { 
+     color: #551A8B; 
+}  
+
+.clear { clear: both; width: 0; height: 0; }
+
+
+/*
+==========================================================
+SUPERNAV 
+==========================================================
+*/
+
+#supernav {
+    width: 100%;
+    background: #000;
+    font-size: 1.1em;
+    height: 22px;
+}
+
+#supernav .wrap {
+    width: 975px;
+    margin: 0 auto;
+}
+
+#supernav div {
+    line-height: 13px;
+}
+
+#supernav .wrap #quicklinks {
+    float: left;
+    margin-left: 2px;
+}
+
+#supernav .wrap #quicklinks a#toggleQL {
+    display: block;
+    background: url('../images/site/supernav_right.gif') no-repeat center right;
+    padding: .4em 12px .4em 5px;
+    margin-right: 18px;
+}
+
+#supernav .wrap #quicklinks.open #toggleQL {
+    background: #dee url('../images/site/supernav_down.gif') no-repeat center right;
+    color: #000;
+    padding: .4em 12px .4em 5px;
+    margin-right: 18px;
+}
+
+#supernav .wrap #quicklinks #quicklinkslist {
+    display: none;
+}
+
+#supernav .wrap #quicklinks.open #quicklinkslist {
+    display: block;
+}
+
+#supernav .wrap #siteindex {
+    float: left;
+}
+
+#supernav .wrap #siteindex a {
+    display: block;
+    padding: .4em 5px .4em 5px;
+}
+
+#supernav a {
+    text-decoration: none;
+}
+
+#quicklinkslist {
+    position: absolute;
+    border: 1px solid #000;
+    border-top: none;
+    background-color: #dee;
+    margin: 0;
+    width: 16em;
+    z-index: 100;
+}
+
+#quicklinkslist li {
+    display: inline;
+}
+
+#supernav .wrap #quicklinkslist li a {
+    display: block;
+    text-align: left;
+    padding: 3px 6px 3px 5px; 
+    color: #90002a;
+}
+
+#supernav .wrap #quicklinkslist li a:hover {
+    text-decoration: none;
+    background-color: #256489;
+    color: #fff;
+}
+
+#supernav .wrap .openSI { 
+    display: block;
+    padding-right: 12px;
+}
+
+#supernav .wrap .closeSI { 
+    display: block;
+    padding-right: 12px;
+}
+
+#supernav table .closeSI { 
+    display: block;
+}
+ 
+#supernav .wrap #helplinks ul {
+    float: right;
+}
+
+#supernav .wrap #helplinks ul li a {
+    display: block;
+    border-right: 1px solid white;
+    padding: 0 10px 0 10px;
+    margin: 4px 0 3px 0;
+}
+
+#supernav .wrap #helplinks ul li {
+    float: left;
+    height: 22px;
+}
+
+#supernav .wrap #helplinks ul li.last {
+    margin-right: 0;
+}
+
+#supernav .wrap #helplinks ul li.last a {
+    border-right: none;
+}
+
+#supernav .wrap a {
+    color: #fff;
+}
+#supernav .wrap a:hover {
+    text-decoration: underline;
+}
+
+#supernav ul, #supernav li{ margin:0; padding:0; }
+#supernav ul { list-style-position: outside; list-style-image: none; list-style-type: none; }
+
+
+/*
+==========================================================
+HEADER 
+==========================================================
+*/
+
+#header {
+    width: 960px;
+    clear: left;
+    margin: 0 auto;
+}
+    
+#header h1 {
+    float: left;
+    margin: 0;
+    padding: 12px 0 11px 0;
+    background-position: 0 12px;
+    background-repeat: no-repeat;
+}
+
+#header #print-banner {
+    display: none;
+}
+
+#header h1 a {
+    display:block;
+    height:74px;
+    width: 750px;
+    text-indent:-10000px;
+}
+
+#header  h1 a img {
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+#header h1 a.last {
+    margin-top: .55em;
+}
+    
+/* Search */
+#header #search {
+    float: right;
+    padding-top: 25px;
+    text-align: right;
+    width: 178px; 
+}
+
+#header #search form {
+    font: normal .9em Arial, sans-serif;
+    padding: 0; 
+    margin: 0;
+}
+
+#header #search form label,
+#header #search label { /* doe not work in ie6 */
+    display: block;
+    text-align: left; 
+    margin: -1px 0 0 0; 
+    padding: 0 0 1px 0;
+}
+
+#header #search form label img,
+#header #search label img {
+    padding: 3px 0 0 0;
+}
+
+#header fieldset {
+    display: block;
+    vertical-align: middle;
+    margin: 3px 0 0 0; 
+    padding: 0;
+}
+
+#header #search fieldset * {
+    vertical-align: middle;
+}
+
+#header #search fieldset.input .search_text,
+#header #search form fieldset.input #search_text {
+    width: 138px; 
+    margin: 5px 2px 0 1px;
+    border: 1px solid #666;
+    font-family: Arial,sans-serif;
+    font-size: 12px;
+    padding: 1px 0 1px 1px;
+    float: left;
+}
+
+#header #search fieldset.input .search_submit,
+#header #search form fieldset.input #search_submit {
+    border: none;
+    width: 30px;
+    height: 30px;
+    background: url('../images/site/go.gif') no-repeat center center;
+    font-size: 0;
+    line-height:75px;
+    cursor: pointer;
+    margin-right: -1px;
+}
+
+#header #nav {
+    background: #90002a;
+    margin: 0;
+    height: 30px;
+    clear: both;
+    padding-left: 24px;
+}
+
+#header #nav ul {
+    list-style-type: none;
+    margin: 0; 
+    margin-top: 9px;
+    float: left;
+    padding: 0;
+}
+
+#header #nav ul li {
+    display: inline;
+    padding: 0.3em 1.3em 0.3em 0;
+}
+    
+#header #nav a {
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: bold;
+    line-height: 13px;
+    text-decoration: none;
+}
+
+#header #nav a:hover {
+    text-decoration: none;
+    color: #f6e88c;
+}
+
+#header #nav a.on {
+    color: #f6e88c;
+}
+
+#header #nav ul li.active a, 
+#header #nav a.active {
+    color: #f6e88c;
+}
+
+
+
+
+
+/* 
+==========================================================
+BODY AREA
+==========================================================
+*/
+
+#content-wrap {
+    width: 960px;
+    margin: 0 auto;
+    clear: left;
+    min-height: 450px;
+    height:auto !important;
+    height:450px;
+}
+
+a.ext {
+    background: transparent url(../images/site/icon.ext.gif) no-repeat center right; 
+    padding: 0 19px 1px 0;
+}
+
+a.pdf {
+    background: url(../images/site/icon.pdf.gif) no-repeat top left; 
+    padding: 0 0 1px 15px;
+}
+
+a.video{
+    background: url(../images/site/icon.video.gif) no-repeat 0 50%; 
+    padding-left: 20px;
+}
+
+a.mail, a.to {
+    background: url(../images/site/icon.envelope.gif) no-repeat 0 4px; 
+    padding-left: 14px;
+}
+
+
+/* 
+==========================================================
+SHARE THIS 
+==========================================================
+*/
+
+.sharethis-container {
+   position: relative;
+}
+
+.sharethis-container ul.menu  {
+   width: 190px;
+   overflow: hidden;
+   padding: 10px;
+   margin: 0;
+   float: left;
+   position: absolute;
+   left: 0; bottom: 20px;
+   z-index: 1000;
+   background: #e8e8e8; /* for IE */
+}
+
+
+.sharethis-container a.toggle {
+   background: url(http://www.hbs.edu/images/site/icon-share.gif) no-repeat top left;
+   padding: 0 0 0 18px;
+}  
+
+.sharethis-container ul.menu {
+   list-style-type: none;
+   padding: 0;
+   display: none;
+}
+
+.sharethis-container ul.menu li {
+   padding: 0 0;
+   margin: 6px 2px;
+   width: 200px;
+}
+
+.sharethis-container ul.menu li a {
+   font-weight: normal;
+   text-transform: none;
+   padding:0 0 5px 20px;
+}
+.sharethis-container .technorati {
+   background: url(http://www.hbs.edu/shared/images/sharethis/icon-technorati.gif) no-repeat  0 0;
+} 
+
+/* Icons Updated 06/10/11 */
+.sharethis-container .digg {
+   background: url(http://www.hbs.edu/shared/images/framework/1.0/icon.digg.gif) no-repeat 0 0;
+}
+.sharethis-container .delicious {
+   background: url(http://www.hbs.edu/shared/images/framework/1.0/icon.delicious.gif) no-repeat 0 0;
+} 
+.sharethis-container .mixx {
+   background: url(http://www.hbs.edu/shared/images/framework/1.0/icon.mixx.gif) no-repeat  0 0;
+} 
+.sharethis-container .reddit {
+   background: url(http://www.hbs.edu/shared/images/framework/1.0/icon.reddit.gif) no-repeat  0 0;
+}
+.sharethis-container .newsvine {
+   background: url(http://www.hbs.edu/shared/images/framework/1.0/icon.newsvine.gif) no-repeat  0 0;
+} 
+.sharethis-container .stumbelupon {
+   background: url(http://www.hbs.edu/shared/images/framework/1.0/icon.stumbleupon.gif) no-repeat  0 0;
+} 
+.sharethis-container .furl {
+   background: url(http://www.hbs.edu/shared/images/framework/1.0/icon.furl.gif) no-repeat  0 0;
+}
+.sharethis-container .facebook {
+   background: url(http://www.hbs.edu/shared/images/framework/1.0/icon.facebook.gif) no-repeat 0 0; 
+}
+.sharethis-container .linkedin {
+   background: url(http://www.hbs.edu/shared/images/framework/1.0/icon.linkedin.gif) no-repeat 0 0;
+}
+.sharethis-container .twitter {
+   background: url(http://www.hbs.edu/shared/images/framework/1.0/icon.twitter.gif) no-repeat  0 0;
+}
+.sharethis-container .digg,
+.sharethis-container .delicious,
+.sharethis-container .mixx,
+.sharethis-container .reddit,
+.sharethis-container .newsvine,
+.sharethis-container .stumbelupon,
+.sharethis-container .furl,
+.sharethis-container ul.menu .facebook,
+.sharethis-container ul.menu .linkedin,
+.sharethis-container ul.menu .twitter{display: block; padding: 1px 0 4px 0;}
+
+
+
+
+
+/*
+========================================================== 
+FOOTER 
+==========================================================
+*/
+
+#footer {
+    width: 960px;
+    margin: 25px auto 0 auto;
+    padding-bottom: 40px;
+    font-size: 11px;
+    clear: both;
+}
+
+#copyright {
+    float: left;
+    color: #999;
+    padding: .4em 2em .4em 35px;
+    border-right: 1px solid #b2b2b2;
+    margin-right: 1em;
+}
+
+#footer ul {
+    padding: .4em 0;
+    margin: 0;
+    white-space: nowrap;
+}
+
+#footer ul li {
+    display: inline;
+    padding: 0 .6em;
+}
+
+#footer ul li.last {
+    padding-right: 0;
+
+}
+#footer a {
+    color: #90002A;   
+    text-decoration: none;
+}
+#footer a:hover {
+    text-decoration: underline;
+}
+
+#footer .links {
+    clear: both;
+    text-align: right;
+    padding: 1em 2.1em 0 0;
+}
+
+#footer .links span {
+    padding-left: 2em;
+    color: #a5acb2;
+}
+
+#footer .links span a {
+    color: #a5acb2;
+    text-decoration: underline;
+}
+
+#footer .links #rss {
+    background: url('/mba/images/site/rss.gif') no-repeat center left;
+    padding-left: 16px;
+}

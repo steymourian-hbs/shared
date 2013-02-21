@@ -1,0 +1,156 @@
+<h1 id="dropdown"><a class="black section" name="dropdown">dropdown</a></h1>
+<p>The dropdown module activates page dropdowns</p>
+
+<div class="row">
+<div class="span7">
+<h5>html markup</h5>
+<textarea class="prettyprint">
+<div class="dropdown-container">
+   <a class="ink nu dropdown-toggle" href="#">
+      Campus & Culture<span class="icon-select"></span>
+   </a>
+   <ul class="dropdown-menu nu">
+       <li><a href="default.aspx" class="active inherit-color">
+           Academic Experience</a></li>
+       
+       <li class="divider inherit-bg"></li>
+       
+       <li><a href="the-hbs-case-method.aspx" class="white">
+           The HBS Case Method</a></li>
+           
+       <li><a href="the-field-method.aspx" class="white">
+           The Field Method</a></li>
+           
+       <li><a href="the-section-experience.aspx" class="white">
+           The Section Experience</a></li>
+           
+   </ul>
+</div>
+
+<div class="dropdown-container2">
+   <a class="dropdown-toggle2 white mu-uc black-bg" href="#">
+     <span class="icon-expand-inverted inherit-bg"></span>Academic Experience
+   </a>
+
+   <ul class="dropdown-menu2 mu-uc black-bg">
+       <li><a href="/mba/academic-experience/Pages/default.aspx" class="white">
+       Academic Experience
+       </a></li>
+       <li><a href="#" class="white">The HBS Case Method</a></li>
+       <li><a href="#" class="white">The Field Method</a></li>
+       <li><a href="#" class="white">The Section Experience</a></li>
+   </ul>
+</div>
+        
+</textarea>
+</div>
+<div class="span5 js-framework orange-inherit">
+    <h5>results</h5>
+    
+    <div class="inherit-bg" style="padding:10px">
+    
+    
+    <div class="breadcrumb">
+        <a href="http://www.hbs.edu/mba/" class="ink">
+         MBA
+        </a>
+        
+        <span class="txt-arrow">&#x2192;</span>
+
+        <div class="dropdown-container">
+        
+           <a class="ink dropdown-toggle" href="#">
+              Campus & Culture<span class="icon-select"></span>
+           </a>
+           
+           <ul class="dropdown-menu">
+               <li><a href="/mba/academic-experience/Pages/default.aspx" class="active inherit-color inherit-bg">Academic Experience</a></li>
+               <li class="divider inherit-bg"></li>
+               <li><a href="/mba/academic-experience/Pages/the-hbs-case-method.aspx" class="white">The HBS Case Method</a></li>
+               <li><a href="/mba/academic-experience/Pages/the-field-method.aspx" class="white">The Field Method</a></li>
+               <li><a href="/mba/academic-experience/Pages/the-section-experience.aspx" class="white">The Section Experience</a></li>
+               <li><a href="/mba/academic-experience/curriculum/Pages/default.aspx" class="white">Curriculum</a></li>
+               <li><a href="/mba/academic-experience/faculty-and-research/Pages/default.aspx" class="white">Faculty &amp; Research</a></li>
+               <li><a href="/mba/academic-experience/Pages/initiatives.aspx" class="white">Initiatives</a></li>
+           </ul>
+           
+        </div>
+        
+        <span class="txt-arrow">&#x2192;</span>
+
+        <div class="dropdown-container">
+        
+           <a class="ink dropdown-toggle" href="#">
+              Campus & Culture<span class="icon-select"></span>
+           </a>
+           
+           <ul class="dropdown-menu">
+               <li><a href="/mba/academic-experience/Pages/default.aspx" class="active inherit-color inherit-bg">Academic Experience</a></li>
+               <li class="divider inherit-bg"></li>
+               <li><a href="/mba/academic-experience/Pages/the-hbs-case-method.aspx" class="white">The HBS Case Method</a></li>
+               <li><a href="/mba/academic-experience/Pages/the-field-method.aspx" class="white">The Field Method</a></li>
+               <li><a href="/mba/academic-experience/Pages/the-section-experience.aspx" class="white">The Section Experience</a></li>
+               <li><a href="/mba/academic-experience/curriculum/Pages/default.aspx" class="white">Curriculum</a></li>
+               <li><a href="/mba/academic-experience/faculty-and-research/Pages/default.aspx" class="white">Faculty &amp; Research</a></li>
+               <li><a href="/mba/academic-experience/Pages/initiatives.aspx" class="white">Initiatives</a></li>
+           </ul>
+           
+        </div>
+
+        </div>
+
+        <br/><br/>
+      
+        <div class="dropdown-container2">
+           <a class="dropdown-toggle2 white mu-uc black-bg" href="#">
+             <span class="icon-expand-inverted inherit-bg"></span>Academic Experience
+           </a>
+        
+           <ul class="dropdown-menu2 mu-uc black-bg">
+               <li><a href="/mba/academic-experience/Pages/default.aspx" class="white">
+               Academic Experience
+               </a></li>
+               <li><a href="/mba/academic-experience/Pages/the-hbs-case-method.aspx" class="white">The HBS Case Method</a></li>
+               <li><a href="/mba/academic-experience/Pages/the-field-method.aspx" class="white">The Field Method</a></li>
+               <li><a href="/mba/academic-experience/Pages/the-section-experience.aspx" class="white">The Section Experience</a></li>
+               <li><a href="/mba/academic-experience/curriculum/Pages/default.aspx" class="white">Curriculum</a></li>
+               <li><a href="/mba/academic-experience/faculty-and-research/Pages/default.aspx" class="white">Faculty &amp; Research</a></li>
+               <li><a href="/mba/academic-experience/Pages/initiatives.aspx" class="white">Initiatives</a></li>
+           </ul>
+        </div>
+        <br/>
+        text below
+
+        <br/>
+    </div>
+</div>
+</div>
+
+<!--
+
+TEST CASES
+
+
+-->
+<script type="text/javascript">
+require(['domready!'],function(){
+
+    asyncTest( "dropdown", function() {
+        expect(1);
+        var t = $(".dropdown-container").eq(0);
+        t.trigger("mouseenter");
+        
+        setTimeout(function() {
+            ok(t.hasClass('active'),'dropdown is open');
+            start();
+            t.trigger("mouseleave");
+        }, 20);
+    });
+
+
+     
+});
+</script>
+
+
+

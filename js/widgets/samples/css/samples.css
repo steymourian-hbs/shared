@@ -1,0 +1,24 @@
+h2{
+margin: 10px 10px;	
+padding: 0;
+color: #90002A;
+}
+
+h3{
+	background-color: #CCC;	
+	padding: 5px 5px;
+}
+
+textarea{
+	width: 500px;	
+	height: 80px;
+	
+}
+
+.sampleblock{
+	display: block;	
+	width: 100%;
+	float: left;
+	margin: 10px 10px;
+
+}

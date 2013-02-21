@@ -1,0 +1,57 @@
+<h1><a class="black section" name="trim">trim</a></h1>
+<p>The trim module trims text to fit a container</p>
+
+<div class="row">
+<div class="span6">
+<h5>html markup</h5>
+<textarea class="prettyprint">
+<div class="trim-container" 
+    style="max-height:156px;overflow:hidden;">
+    <div class="kappa-uc">This is a title</div>
+    <p class="trim-ellipsis">Lorem ipsum dolor sit</p>
+    <p class="trim-ellipsis-char">Lorem ipsum dolor sit</p>
+</div>
+</textarea>
+</div>
+<div class="span6 js-framework">
+<h5>results</h5>
+
+<div class="row">
+<div class="span3 trim-container" style="height:156px;overflow:hidden;">
+<div class="kappa-uc">This is a<br/>title</div>
+<div class="trim-ellipsis-char">Our campus greatly enriches the educational experience of MBA students by providing a host of opportunities for interaction with one another and with faculty beyond the classroom.</div>
+</div>
+<div class="span3 trim-container" style="max-height: 156px;overflow:hidden;">
+<div class="kappa-uc">This is a title</div>
+<div class="trim-ellipsis">Our campus greatly enriches the educational experience of MBA students by providing a host of opportunities for interaction with one another and with faculty beyond the classroom.</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<!--
+
+TEST CASES
+
+-->
+<script type="text/javascript">
+require(['framework/trim'],function(obfuscate){
+
+   test("trim", function() {
+     var $first = $(".trim-ellipsis-char");
+     window.first = $first.html();
+     ok($first.html().indexOf('interaction') == -1,'char trim');
+     var $second = $(".trim-ellipsis");
+     //pc
+     var match = $('<div>Our campus greatly enriches the educational experience of MBA students by providing a host of opportunities for interaction with one&hellip;</div>');
+     //ipad
+     var match2 = $('<div>Our campus greatly enriches the educational experience of MBA students by providing a host of opportunities for interaction with one another&hellip;</div>');
+     ok($second.html() == match.html() || $second.html() == match2.html(),'word trim');
+   });
+     
+});
+</script>
+
+
+

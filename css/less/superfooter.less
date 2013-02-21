@@ -1,0 +1,616 @@
+
+   
+   
+/*================================================================================
+
+Universal Footer
+
+----------------------------------------------------------------------------------*/
+
+
+
+#superfooter {
+    background:#f0f0f0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-top: 1px solid silver;
+    z-index: 10000;
+}
+
+
+#superfooter .wrap {
+    font-size: 11px;
+    margin-bottom: 14px;
+    padding: 0;
+    clear: both; 
+    width: 100%;
+    margin: 0 auto;
+}
+
+#superfooter .shadow {
+     border-top: 1px solid #e9e9e9;
+     border-bottom: 1px solid #d0d0d0;
+
+}
+
+#superfooter .shadow > div{
+     border-top: 1px solid #e1e1e1;
+     border-bottom: 1px solid #d8d8d8;
+}
+
+#superfooter .infobar {
+    float: left;
+    display: none;
+    padding-top: 14px;
+    width: 100%;
+    position: relative;
+    z-index: 0;
+}
+
+#superfooter div.bar {
+    width: 956px;
+    padding: 5px 4px 0 4px;
+    height: 20px;
+    clear: left;
+    margin: 0 auto; 
+    background: #f0f0f0;
+}
+
+#superfooter .infobar div.inner { /* sets centering */
+    width: 956px;
+    clear: left;
+    margin: 0 auto; 
+}
+
+#superfooter .infobar div.common { /* resources and HU copyright */
+    float: right;
+}
+
+#superfooter .infobar div.section { 
+    float: left;
+}
+
+#superfooter .selector {
+    text-transform: uppercase;
+    font-size: 11px;
+    cursor: pointer;
+    font-family: Arial;
+    font-size:10px;
+    color: #787878;
+}
+
+#superfooter .opened {
+
+}
+
+#superfooter .selector > i {
+    position: relative;
+    bottom: -4px;
+    *bottom: 0px;
+    left: 2px;
+}
+
+#superfooter .selector span {
+    padding-left: 15px;
+}
+
+/* Not in use yet */
+#superfooter .infobar .site-specific-contents{
+    width: 956px;
+    margin: 0 auto;
+}
+
+
+/* social */
+
+#superfooter .opens-overlay {
+    position: static;
+}
+
+#superfooter .opens-overlay-popup {
+    position: relative;
+}
+
+#superfooter .opens-overlay-popup .overlay {
+    bottom: 30px;
+    left: 0;
+}
+
+#superfooter li.social-bar,
+#superfooter li.opens-overlay{
+    background: none;
+}
+
+#superfooter .overlay {
+    background-color: #f0f0f0; 
+    position: absolute;
+    border: 1px solid #a1a1a1;
+    opacity: 0.95;
+    left: -57px;
+    width: 210px;
+    bottom: 22px; 
+    z-index:1;
+}
+
+#superfooter .overlay > ul {
+    padding: 10px 10px 14px 10px;
+    width: 190px;
+}
+
+#superfooter ul#related .overlay {
+    padding: 14px 10px 14px 10px;
+}
+
+#superfooter .social .overlay {
+    background-color: #f0f0f0; 
+}
+
+#superfooter .closed{
+    display: none;
+}
+
+#superfooter ul.social {
+    float: right;
+    margin: 0 15px 0 0;
+    position: relative;
+}
+
+#superfooter ul.social > li {
+    display: block;
+    float: left;
+    margin:0 8px 0 0;
+
+}
+
+#superfooter ul.social > li > a {
+    background: none !important;
+}
+
+/* info */
+
+#superfooter .col1{
+    color: #545454;
+    width: 210px;
+    padding-left: 20px;
+    float: left;
+}
+
+#superfooter .col2{
+    width: 220px;
+    padding-right: 35px;
+    float: left;
+}
+
+#superfooter .col3{
+    width: 200px;
+    padding-right: 36px;
+    margin-right: 20px;
+    float: left;
+}
+
+#superfooter .col4{
+    padding-right: 25px;
+    width: 180px;
+    margin-top: 15px;
+}
+
+#superfooter li.hucopymsg{
+    color: #545454;
+    display: block;
+    font-size: 10px;
+    line-height: 1.1em;
+    padding: 7px 0 10px;
+    background:none;       
+}
+
+#footer {
+    width: 960px;
+    margin: 25px auto 0 auto;
+    padding-bottom: 40px;
+    font-size: 11px;
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    clear: both;
+    display: none;
+}
+
+#site-footer {
+    border: 1px solid #cecece;
+    background: #ebebeb;
+}
+
+.section li,
+#site-footer li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+
+.collapsed-footer #site-footer{
+    position: relative; 
+}
+
+.collapsed-footer #site-footer #info{
+    position: absolute;
+    border-bottom: none;
+    bottom: 28px;
+    left: 0; 
+    width: 958px;
+    padding-top: 15px;
+}
+
+.collapsed-footer #site-footer div.collapsible {
+    display: block; 
+}
+
+#site-footer div.collapsible{
+    float: left;
+    width: 956px;
+    background: #ebebeb;
+    clear: left;
+}
+
+#site-footer div.collapsible a{
+    color: #747474;
+    display: block; 
+    float: left;
+}
+
+#site-footer div.collapsible a span{
+    display: block; 
+    float: left;
+    line-height: 1em;
+    margin: 6px 0 2px 0;
+    padding: 1px 18px 1px 18px;
+    border-right: 1px solid #747474;
+}
+
+#site-footer div.collapsible a span.last{
+    border-right: none;
+}
+
+#site-footer div.collapsible .selector{
+    display: block;
+    float: left;
+}
+
+
+#superfooter .selector span {
+    padding-left: 15px; 
+    letter-spacing: 0.05em; 
+}
+
+#site-footer div.collapsible .selector a{
+    background: url("../images/framework/1.0/selector.plus.gif") no-repeat top left;
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: 25px;
+    height: 24px;
+}
+
+#site-footer div.collapsible .selector a.open {
+    background: url("../images/framework/1.0/selector.minus.gif") no-repeat top left;
+}
+
+#site-footer div.collapsible a {
+    text-decoration: none;      
+}
+
+/* columns of expanded footer */
+#superfooter .infobar{
+    background-color: #ebebeb;
+}
+
+#superfooter .infobar > .icon-square-close-micro {
+    float: right;
+    margin-right: 10px;
+    margin-top: -8px;
+    cursor: pointer;
+}
+
+#superfooter div.section{
+    float: left;
+    padding-top: 2px;
+    padding-bottom: 16px;
+}
+
+#superfooter a{
+    color: #336699;
+}
+
+#superfooter h5{
+    color: #333333;
+    font-size: 12px;
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    margin-bottom: 4px;
+    font-weight:bold;    
+}
+
+#superfooter .col1 h5{
+    color: #90002a;
+    margin-bottom: 12px; 
+}
+
+#superfooter.col1 h5 a.detailed{
+    font-weight: normal;
+    margin-left: 8px;
+}
+
+#superfooter .col4 h5{
+    margin-bottom: 4px;
+}
+
+#superfooter .vcard p,
+#superfooter .vcard h4{
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+}
+
+#superfooter .vcard p.name{
+    color: #373737;
+    margin-bottom: 6px;
+    font-weight:bold;    
+}
+
+#superfooter .vcard span.tel{
+    display: block;
+    margin-top: 6px;
+}
+
+#superfooter .vcard span.mail{
+    display: block;
+    margin-bottom: 6px;
+}
+
+#superfooter .vcard a.to{
+    background: none;
+    padding-left: 0;
+}
+
+#superfooter ul{
+    list-style-type: none;
+    margin: 0; 
+    padding: 0; 
+}
+
+#superfooter ul li{
+    background: transparent none repeat-x scroll left bottom;
+    background-image: url('data:image/gif;base64,R0lGODlhqAABAIABAJOWg////yH5BAEAAAEALAAAAACoAAEAAAIWRG54kbwNn1TU1Xin3ZjrDn5iRnpVAQA7');
+    *background-image: url("../images/framework/2.0/horizontal.dotted.rule.gray.gif");
+    line-height: 1em;
+}
+
+#superfooter .col2 ul li.lev1{
+    background: url("../images/framework/2.0/rule-dotted-200px.gif") no-repeat scroll left bottom transparent;
+}
+
+#superfooter .overlay li {
+    font-family: Arial, Helvetica, sans-serif;
+    background: none;
+    display: block;
+}
+
+#superfooter .overlay li a {
+    line-height: 1em;
+    padding: 3px 0;
+}
+
+/* leading link inside an overlay menu - adds a dotted rule */
+#superfooter .wrap .overlay li strong{
+    background: transparent none repeat-x bottom left;
+    background-image: url('data:image/gif;base64,R0lGODlhqAABAIABAJOWg////yH5BAEAAAEALAAAAACoAAEAAAIWRG54kbwNn1TU1Xin3ZjrDn5iRnpVAQA7');
+    *background-image: url("../images/framework/2.0/horizontal.dotted.rule.gray.gif");
+    display: block;
+    color: #373737;
+    margin-bottom: 10px;
+    padding: 0 0 10px 0;
+}
+
+#superfooter .wrap .overlay li strong.lead{ /* header with dotted line that has an icon */
+    padding: 0 0 10px 0;
+}
+
+/* for multiple leading links, mark top ones as "multiple" to get rid of dotted rules */
+#superfooter .wrap .overlay li.multiple strong{
+    background: none;
+    padding-bottom: 5px;
+    margin-bottom: 0;
+}
+
+#superfooter .wrap ul#related .overlay li strong{
+    margin-bottom: 3px;
+}
+
+#superfooter .wrap .overlay li span{
+    color: #373737;
+}
+
+#superfooter ul li a{
+    display: block;
+    line-height: 1.1em;
+    padding: 7px 0 10px 0; 
+}
+
+/* override the block display for icons in the social bar */
+#superfooter ul li.opens-overlay a,
+#superfooter ul li.social-bar a{
+    display: inline;
+    line-height: 1em;
+    padding: 0; 
+}
+
+/* Intiatives Pop Up*/
+#superfooter .col2 ul li.opens-overlay li a{
+    line-height: 1.7em;
+}
+
+#superfooter  .col2 ul li.opens-overlay{
+    padding: 7px 0 8px 0;
+}
+
+#superfooter ul.social{
+    margin-right: 10px;
+}
+
+#superfooter ul.social li a.close,
+#superfooter ul li a.close{
+    position: absolute;
+    top: 3px; right: 5px;
+    padding: 0; 
+}
+
+#superfooter ul.social li a.leads{ 
+     
+}
+
+#superfooter ul.social li a.leads .overlay-icon{ 
+    position: relative;
+    top: -3px;
+    left: 0;
+}
+
+#superfooter ul.social li a.leads:hover{ 
+    text-decoration: none;
+}
+
+#superfooter ul.social li a.leads .linktext{ 
+    position: relative;
+    margin-top: -17px;
+    left: -8px;
+    color: #336699;
+    padding-left: 30px;
+    display: block;
+}
+
+#superfooter ul.social li a.leads:hover .linktext{ 
+    text-decoration: underline;
+}
+
+#superfooterul.social > li > a{
+    padding: 3px 7px; 
+    padding: 3px 7px 0 7px;
+}
+
+#superfooter ul.social li.fblogs a{
+    padding-left :0;
+}
+
+#superfooter ul.social li li a{
+    display: block;
+    padding: 3px 0 3px 0;
+    margin-bottom: 1px;
+}
+
+#superfooter ul.social li span,
+#superfooter ul.rss-feeds li span{
+    font-weight: bold;
+}
+
+#superfooter ul.social li span.heading{ 
+    display: block;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+#superfooter li.hucopymsg {
+    background:none;    
+}
+
+/* Social Media Links */
+
+#superfooter .section li.site-specific { display: none; }
+
+#superfooter ul.social li li.site-specific{ /* hides the iconed links that are only for specific sites */
+    display: none;
+}
+
+#superfooter  li.rss-default { display: none; }
+#superfooter  li.fb-default { display: none; }
+#superfooter  li.li-default { display: none; }
+#superfooter  li.tw-default { display: none; }
+#superfooter  li.yt-default { display: none; }
+#superfooter .section li.er-specific { display: none; }
+
+/*Show no ext icons for social links*/
+#superfooter .bar .social a img.ext-icon{display:none;}
+
+/* ----------------------------------------------------- */
+
+/* Links That Appear Under Fat Footer */
+#copyright {
+    border-right: none;
+    float: left;
+    margin: 0 10px 0 10px;
+    padding: 0;
+}
+
+#footer{
+    width: 860px;
+    margin: 0 auto;
+}
+
+#footer ul {
+    border-left: 1px solid #b2b2b2;
+    float: left;
+    margin: 0 0 0 10px;    
+    padding: 0 0 0 10px;
+}
+
+#footer ul li{
+    margin: 0 7px 0 7px;
+    padding: 0;
+}
+
+#footer ul li a{
+    margin: 0;
+    padding: 0;
+}
+
+.footerspace {
+    display:block;
+    height:215px;
+    position:relative;
+    z-index:-100000;
+    display:none;
+}
+
+
+    /* overrides for ipad screen and less */
+@media only screen and (max-width: 768px) {
+    #supernav {
+        width:960px;
+    }
+    #superfooter {
+        /* width:960px; */
+        /* position: absolute; */
+        bottom:0;
+        width:100%;
+        position: fixed;
+    }
+    
+
+    #superfooter .infobar {
+        position: absolute;
+        bottom:0;
+    }
+    
+}
+
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    #superfooter {
+        /* width:1000px; */
+        /* position: absolute; */
+        bottom:0;
+        left:0;
+        width:100%;
+        position: fixed;
+    }
+    
+    
+
+    
+}
+    

@@ -1,0 +1,281 @@
+.component-framework {
+
+    // ---------------------
+    // Toolbar and Navbar
+    // ---------------------
+
+    .toolbar,
+    .navbar {
+       list-style-type:none; 
+       margin: 0;
+       padding: 0;
+    }
+
+    .navbar {
+       height: 40px;
+    }
+
+    .toolbar > li,
+    .navbar > li {
+       display: block;
+       float: left;
+       margin: 0;
+       padding: 0;
+       a {.color-framework .ink;}
+       &.active a { color:white }
+    }
+ 
+    .navbar > li{
+       padding: 13px 0 13px 0; 
+       margin: 0;
+       
+        > a{
+           margin: 13px 0 13px 0;
+           padding: 2px 10px;
+        } 
+        
+        > a.first{
+           border-left: none;        
+           padding-left: 0;
+        } 
+        
+        > a.last{  
+           padding-right: 0;
+        }
+        
+        &.divider {
+           background-color: white;
+           width: 1px;
+           height: 25px;
+           margin-top: 7px;
+           padding:0;        
+        }
+    }
+	
+	// the table navbar works better with resized text.  
+	
+	table.navbar {
+	    width: 100%;
+		margin-top: 0;
+		
+		a {.color-framework .ink;}
+
+	    td {
+		  text-align: center; 
+		  
+		}
+		
+		a.active { color:white }
+		
+		td.first {
+		  text-align: left;
+		  a {padding-left: 0;}
+		}
+		
+		td.last {
+		  text-align: right;
+		  a {padding-right: 0;}
+		}
+		
+		.divider {
+           width: 1px;
+           height: 25px;
+           padding:0;   
+		}
+	}
+	
+    
+    .toolbar li a {
+       padding: 9px 0 0 0;
+     }
+    
+    // ---------------------
+    // Breadcrumb
+    // ---------------------
+
+   .breadcrumb {
+      .txt-arrow {
+        margin: 0 4px;
+      }
+   }
+   
+    //---------------------
+    // Tabs
+    //---------------------
+    
+    .nav-tabs {
+        margin: 0; 
+        padding: 0;
+        float: left;
+        clear: left;  
+        border-bottom: 4px solid #cecece;
+        width: 100%;   
+        margin: 20px 0 20px 0;    
+        .type-framework .mu-uc;
+
+        li {
+            display: inline; 
+            list-style-type: none;
+            
+            &:before { display:none; }
+            
+            a {
+                display: block;
+                float: left;
+                background-color: #efefef;
+                .transition(background 0.1s linear);
+                .color-framework .ink;
+                margin: 0 3px 0 0;
+                padding: 8px 16px;
+            }
+            a:hover {
+                text-decoration: none;
+            }
+            a.hover {
+                background: black;
+                color: white;
+            }
+            
+        }
+        li.active a { color: black;}
+    }
+    
+
+    //---------------------
+    // Carousel
+    //---------------------
+
+    .carousel-container .carousel-panels {margin: 0;}
+    .carousel-container .carousel-panels > li:before {display: none;}
+    .carousel-container .carousel-panels > li {list-style-type: none;}
+    
+    .nav-carousel {
+        margin: 0; 
+        padding: 0;
+        float: left;
+        clear: left;  
+        .clearfix();
+
+        li {
+            display: inline; 
+            list-style-type: none;
+            
+            &:before {display:none;}
+            
+            a {
+                display: block;
+                float: left;
+                margin-right: 5px;
+                
+                /*
+                .icon-dot-white-inverted,
+                .icon-circle-arrow-right-white-inverted,
+                .icon-circle-arrow-right-white-inverted {
+                   .transition(background-color 0.1s linear);
+                }*/
+                
+                .icon-dot,.icon-dot-white,.icon-dot-inverted,.icon-dot-white-inverted {
+                   margin-bottom: 5px;
+                }
+                
+            }
+        }
+    }
+    
+    
+    // ---------------------
+    // Local Navigation
+    // ---------------------
+    
+    // div.local-navigation
+    .local-navigation{
+        border-top: 3px solid #cdcccc;
+        
+        // reset all inner elements
+        ul,ul li{
+            list-style-type: none;
+            margin: 0; 
+            padding:0; 
+        }
+        
+        a {
+           display: block;
+        }
+        .closed > ul{
+           display: none;
+        }
+        
+        .open > a,
+        .active > a {
+           .color-framework .ink;
+        }    
+        
+        // Top Level
+        > ul > li {
+        
+            &.open {
+                border-bottom: 3px solid #cdcccc;
+                padding-bottom: 8px;
+            }
+            
+            &.open > span > a,
+            &.open > a{
+                border-bottom: none; 
+                padding-bottom: 3px;
+            }
+            
+            > span > a,
+            > a {
+              padding: 12px 0 12px 0;
+              border-bottom: 1px solid #cccbcb;  
+              .type-framework .mu-uc;              
+            }
+        }
+        
+        // 2nd level 
+        
+        > ul > li > ul > li {
+            > span > a,
+            > a {
+                padding: 7px 0 2px 0;
+                border-bottom: none;  
+                .type-framework .mu;
+            }
+        } 
+        
+        // 3rd level
+        
+        > ul > li > ul > li > ul {
+            
+            padding: 3px 0 0 0;
+            
+            > li {
+                .type-framework .nu;
+                text-transform: none;
+                list-style-type: none;
+                *list-style-type: disc;
+                margin-left: 1em;
+                
+                > span > a,
+                > a {
+                    padding: 3px 0 3px 0;
+                }
+                
+                &:before {
+                   content:"";
+                   float:left;
+                   width:4px;
+                   height:6px;
+                   margin: 7px 0 0 -11px;
+                   background-image: ~"url('../images/framework/3.0/framework.png')";
+                   background-position: 0 -110px;
+                }
+            }
+        }
+    }
+        
+}
+    
+    
+ 
+
